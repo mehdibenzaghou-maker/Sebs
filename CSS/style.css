@@ -410,105 +410,6 @@ footer {
     font-family: 'Inter', sans-serif;
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .dish-card {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .dish-model {
-        width: 250px;
-        height: 250px;
-    }
-    
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: var(--primary-blue);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
-        gap: 0;
-    }
-    
-    .nav-menu.active {
-        left: 0;
-    }
-    
-    .nav-item {
-        margin: 1rem 0;
-    }
-    
-    .hamburger {
-        display: flex;
-    }
-    
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-}
-
-@media (max-width: 768px) {
-    .menu-header h1 {
-        font-size: 2.5rem;
-    }
-    
-    .menu-section h2 {
-        font-size: 2rem;
-    }
-    
-    .section-btn {
-        min-width: 100px;
-        padding: 0.8rem;
-        font-size: 0.8rem;
-    }
-    
-    .section-btn .icon {
-        font-size: 1.2rem;
-    }
-    
-    .drink-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-}
-
-@media (max-width: 480px) {
-    .menu-sections-nav {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .section-btn {
-        width: 90%;
-        flex-direction: row;
-        justify-content: flex-start;
-        padding: 1rem;
-    }
-    
-    .section-btn .icon {
-        margin-bottom: 0;
-        margin-right: 1rem;
-        font-size: 1.5rem;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* Story Page Styles */
 .story-section {
     background: var(--white);
@@ -729,8 +630,56 @@ footer {
     box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
-/* Responsive adjustments for contact page */
+/* Responsive Design */
 @media (max-width: 992px) {
+    .dish-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .dish-model {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--primary-blue);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+        gap: 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-item {
+        margin: 1rem 0;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
     .contact-grid {
         grid-template-columns: 1fr;
     }
@@ -750,6 +699,28 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .menu-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .menu-section h2 {
+        font-size: 2rem;
+    }
+    
+    .section-btn {
+        min-width: 100px;
+        padding: 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .section-btn .icon {
+        font-size: 1.2rem;
+    }
+    
+    .drink-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
     .story-section,
     .contact-section {
         padding: 2rem;
@@ -766,5 +737,29 @@ footer {
     
     .cta-button {
         text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-sections-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .section-btn {
+        width: 90%;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 1rem;
+    }
+    
+    .section-btn .icon {
+        margin-bottom: 0;
+        margin-right: 1rem;
+        font-size: 1.5rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
     }
 }
