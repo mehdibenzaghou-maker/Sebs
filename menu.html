@@ -1,0 +1,2303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Seb's Garden</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Seb's Garden</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="menu-container">
+        <div class="menu-header">
+            <h1>NOTRE MENU</h1>
+        </div>
+
+        <div class="menu-sections-nav">
+            <button class="section-btn active" data-section="entrees-froides">
+                <div class="icon">🥗</div>
+                Entrées Froides
+            </button>
+            
+            <button class="section-btn" data-section="entrees-chaudes">
+                <div class="icon">🔥</div>
+                Entrées Chaudes
+            </button>
+            
+            <button class="section-btn" data-section="specialites-camembert">
+                <div class="icon">🧀</div>
+                Spécialités Camembert
+            </button>
+            
+            <button class="section-btn" data-section="pates">
+                <div class="icon">🍝</div>
+                Pâtes
+            </button>
+            
+            <button class="section-btn" data-section="touche-chef">
+                <div class="icon">👨‍🍳</div>
+                Touche du Chef
+            </button>
+            
+            <button class="section-btn" data-section="boucherie">
+                <div class="icon">🥩</div>
+                Pièces de Boucherie
+            </button>
+            
+            <button class="section-btn" data-section="poissons">
+                <div class="icon">🐟</div>
+                Poissons
+            </button>
+            
+            <button class="section-btn" data-section="baguettes">
+                <div class="icon">🥖</div>
+                Baguettes Françaises
+            </button>
+            
+            <button class="section-btn" data-section="burgers">
+                <div class="icon">🍔</div>
+                Burgers
+            </button>
+            
+            <button class="section-btn" data-section="pizza">
+                <div class="icon">🍕</div>
+                Pizza
+            </button>
+            
+            <button class="section-btn" data-section="boissons">
+                <div class="icon">🥤</div>
+                Boissons Fraîches
+            </button>
+            
+            <button class="section-btn" data-section="desserts">
+                <div class="icon">🍰</div>
+                Desserts
+            </button>
+        </div>
+
+        <!-- ENTREES FROIDES SECTION -->
+        <section id="entrees-froides" class="menu-section active">
+            <h2>ENTREES FROIDES</h2>
+            
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>SALADE CÉSAR</h3>
+                    <p class="dish-price">700,00 DA</p>
+                    <p class="dish-ingredients">POULET DORÉE, CROÛTONS DORÉS, POUDRE DE PARMESAN, LAITUE CROQUANTE, SAUCE CÉSAR MAISON</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Salade%20Cesar.glb"
+                        alt="Salade César 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>VIOLA VERDE</h3>
+                    <p class="dish-price">850,00 DA</p>
+                    <p class="dish-ingredients">CROUSTILLANT D'AUBERGINES FAÇON MILLEFEUILLE, RICOTTA PESTO</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Viola%20verde.glb"
+                        alt="Viola Verde 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>SOLE DI SICILIA</h3>
+                    <p class="dish-price">900,00 DA</p>
+                    <p class="dish-ingredients">DES POIVRONS GRILLES A COEUR, SERVIS EN CARPACCIO, SUBLIMES PAS UNE CREME ONCTUEUSEDE RICOTTA AU THON, RELEVEE D'AIL ROTI ET WESTE DE CITRON</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Sole.glb"
+                        alt="sole di sicilia 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>ÉTÉ EN PROVENCE</h3>
+                    <p class="dish-price">1200,00 DA</p>
+                    <p class="dish-ingredients">BRIE FOUETTÉE ET ROQUEFORT, PECHE ET AGUE GRILLÉE AU MIEL HUILE DOLIVE? ASSAISONNEMENT HUILE DOLIVE JUS DE CITRON MIEL PIMENT DESPPELETTE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Ete%20en%20provence.glb"
+                        alt="Été en provence 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TREMPETTE DE SAUMON FUMÉ</h3>
+                    <p class="dish-price">1300,00 DA</p>
+                    <p class="dish-ingredients">LAMELLES DE SAUMON FUMÉ ENROULÉES AUTOUR D'UN MÉLANGE ONCTUEUX DE FROMAGES FRAIS ET DE RICOTTA AUX HERBES , GARNIES DE CAPRES ET DE TOMATES CERISES</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Trempette.glb"
+                        alt="Trempette de saumon fumé 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>BURRATA FRAICHEUR D'ÉTÉ</h3>
+                    <p class="dish-price">1300,00 DA</p>
+                    <p class="dish-ingredients">LA FAMEUSE BURRATA? MÉLANGE DE FRUITS GRILLÉS, PESTO</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Buratta.glb"
+                        alt="Buratta fraicheur d'été 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CARESSE DES ILES</h3>
+                    <p class="dish-price">1400,00 DA</p>
+                    <p class="dish-ingredients">AVOCAT , MANGUE, CREVETTE GRILLÉS, VINAIGRETTE MIELLÉE, SAVEUR FRUIT DE LA PASSION, HUILE D'OLIVE,PIMENT D'ESPELLETTE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Caresse.glb"
+                        alt="Caresse de iles 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>MAKI AVOCAT SAUMON FUMÉ</h3>
+                    <p class="dish-price">1700,00 DA</p>
+                    <p class="dish-ingredients">FUILLES D'ALGUE, RIZ AU VINAIGRES, SAUMON FUMÉ, AVOCAT, 2 SAUCES UMAMI</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Maki.glb"
+                        alt="Maki avocat saumon fumé 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENTREES CHAUDES SECTION -->
+        <section id="entrees-chaudes" class="menu-section">
+            <h2>ENTREES CHAUDES</h2>
+            
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CAPRA CALDA "CHÈVRE CHAUD"</h3>
+                    <p class="dish-price">800,00 DA</p>
+                    <p class="dish-ingredients">BOUQUET DE SALADE, BRIE DE CHÈVRE, TOMATES CERISES, FRUITS SECS, MIEL, TOASTS GRILLÉS</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Capra%20calda.glb"
+                        alt="Chèvre Chaud 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TATIN ALLA GENOVESE</h3>
+                    <p class="dish-price">900,00 DA</p>
+                    <p class="dish-ingredients">PATE DORÉ CROUSTILLANTE, NUAGE LACTÉ , POMODORO , PESTO</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Tatin.glb"
+                        alt="Tatin alla genovese 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>RISOTTI NERI FRITTI</h3>
+                    <p class="dish-price">950,00 DA</p>
+                    <p class="dish-ingredients">BOULE CROUSTILLANTE DE RISOTTO FONDANT, PANÉE PUIS FRITE, GARNIE AU CREVETTES ET GRUYÉRE, SAUCE A BASE D'ORANGE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Risotti.glb"
+                        alt="Risotti neri fritti 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>YAKITORI JAPONAIS</h3>
+                    <p class="dish-price">1000,00 DA</p>
+                    <p class="dish-ingredients">BOUQUET DE SALADE, BROCHETTES DE FROMAGE EMMENTAL, TRANCHES DE BOEUF, SAUCE YAKITORI, SÉSAME</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Yakitori.glb"
+                        alt="Yakitori japonais 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CHILI CON CARNE</h3>
+                    <p class="dish-price">1200,00 DA</p>
+                    <p class="dish-ingredients">BOEUF MIJOTÉ, TOMATES ET ÉPICES DOUCES, TORTILLAS DE MAIS</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Chili.glb"
+                        alt="Chili con carne 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>GAMBAS AL AJILLO</h3>
+                    <p class="dish-price">1600,00 DA</p>
+                    <p class="dish-ingredients">GAMBAS SAUTÉES A L'AIL ET PIMENT DOUX, DANS UNE HUILE D'OLIVE INFUSÉES, RELEVÉES D'UNE POINTE DE CITRON</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Gambas.glb"
+                        alt="Gambas al ajillo 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CRISPY CALIFORNIA</h3>
+                    <p class="dish-price">2000,00 DA</p>
+                    <p class="dish-ingredients">CROUSTILLANTS DE CREVETTES, AVOCAT, RIZ ROND, VINAIGRE DE RIZ, SÉSAME, SAUCES SOJA SUCRÉE ET SALÉE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crispy.glb"
+                        alt="Crispy california 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPECIALITES CAMEMBERT SECTION -->
+        <section id="specialites-camembert" class="menu-section">
+            <h2>SPÉCIALITÉS CAMEMBERT</h2>
+            
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CAMEMBERT BARBECUE</h3>
+                    <p class="dish-price">800,00 DA</p>
+                    <p class="dish-ingredients">CAMEMBERT GRILLÉ, AMANDES EFFILÉES, MIEL, SERVI AVEC NOTRE PAIN TOASTÉ</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/CB.glb"
+                        alt="Camembert Barbecue 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CAMEMBERT PANÉ</h3>
+                    <p class="dish-price">850,00 DA</p>
+                    <p class="dish-ingredients">CAMEMBERT PANÉ, AMANDES EFFILÉES, MIEL, SERVI AVEC NOTRE PAIN TOASTÉ</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cpane.glb"
+                        alt="Camembert Pané 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CAMEMBERT BARBECUE AU PESTO</h3>
+                    <p class="dish-price">900,00 DA</p>
+                    <p class="dish-ingredients">CAMEMBERT GRILLÉ FOURÉ AU PESTO, AMANDES EFFILÉES, MIEL, SERVI AVEC NOTRE PAIN TOASTÉ</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cpaupesto.glb"
+                        alt="Camembert Barbecue Pesto 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CAMEMBERT TARTIFLETTE</h3>
+                    <p class="dish-price">1000,00 DA</p>
+                    <p class="dish-ingredients">BÉCHAMEL, CAMEMBERT RÔTI AU FOUR, GARNI DE CHIPS DE POMMES DE TERRE, DINDE FUMÉE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Tartiflette.glb"
+                        alt="Camembert Tartiflette 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PÂTES SECTION -->
+        <section id="pates" class="menu-section">
+            <h2>SPAGHETTI / TAGLIATELE / FETTUCCINE</h2>
+            
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CACIO E PEPE</h3>
+                    <p class="dish-price">900,00 DA</p>
+                    <p class="dish-ingredients">POIVRE NOIR FRAÎCHEMENT MOULU, BEURRE, PARMESAN</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cacio%20e%20pepe.glb"
+                        alt="Cacio e Pepe 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CARBONARA</h3>
+                    <p class="dish-price">900,00 DA</p>
+                    <p class="dish-ingredients">JAMBON DE DINDE, FROMAGE, ŒUF, POIVRE NOIR, PARMESAN</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Carbonara.glb"
+                        alt="Carbonara 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TACUOLINI CHAMPIONS</h3>
+                    <p class="dish-price">950,00 DA</p>
+                    <p class="dish-ingredients">CHAMPIGNONS SAUTÉS, AIL, ÉCHALOTES, PERSIL, PARMESAN</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Taglio.glb"
+                        alt="Tacuolini Champions 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CON POPPETTE</h3>
+                    <p class="dish-price">950,00 DA</p>
+                    <p class="dish-ingredients">BOULETTE DE BŒUF, SAUCE TOMATE, AIL, OIGNON, PARMESAN</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Conpolp.glb"
+                        alt="Con Poppette 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>PESTO PISTACHIO</h3>
+                    <p class="dish-price">1000,00 DA</p>
+                    <p class="dish-ingredients">PISTACHES, BASILIC FRAIS, AIL, HUILE D'OLIVE, ZESTE DE CITRON, PARMESAN</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pestopista.glb"
+                        alt="Pesto Pistachio 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CREVETTE</h3>
+                    <p class="dish-price">1000,00 DA</p>
+                    <p class="dish-ingredients">CREVETTES SAUTÉES À L'AIL, BEURRE, CITRON, PERSIL</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crevette.glb"
+                        alt="Crevette 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>RICOTTA PESTO</h3>
+                    <p class="dish-price">1100,00 DA</p>
+                    <p class="dish-ingredients">RICOTTA, PESTO, ZESTE DE CITRON</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Ricottapesto.glb"
+                        alt="Ricotta Pesto 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>FRUTTI DI MARE</h3>
+                    <p class="dish-price">1200,00 DA</p>
+                    <p class="dish-ingredients">MÉLANGE DE FRUITS DE MER, SAUCE TOMATE, AIL, PERSIL, PIMENT</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Fruitti.glb"
+                        alt="Frutti di Mare 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>RAVIOLI</h3>
+                    <p class="dish-price">1400,00 DA</p>
+                    <p class="dish-ingredients">SELON LA DISPONIBILITÉ</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Ravioli 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOUCHE DU CHEF SECTION -->
+        <section id="touche-chef" class="menu-section">
+            <h2>LA TOUCHE DU CHEF</h2>
+            
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>SUPREME DE POULET SAUCE FORESTIÈRE</h3>
+                    <p class="dish-price">1350,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Supreme.glb"
+                        alt="Suprême de Poulet 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>MILANESE ALLA ROMANA</h3>
+                    <p class="dish-price">1700,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Milan.glb"
+                        alt="Milanese alla Romana 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CREVETTE EN SAUCE</h3>
+                    <p class="dish-price">1800,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crevetteensauce.glb"
+                        alt="Crevette en Sauce 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>STEAK FRITE AU POIVRE</h3>
+                    <p class="dish-price">1900,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Steakfrittes.glb"
+                        alt="Steak Frite au Poivre 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>STROGANOFF</h3>
+                    <p class="dish-price">2300,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Strongan.glb"
+                        alt="Stroganoff 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TOURNEDOS ROSSINI</h3>
+                    <p class="dish-price">2600,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Tournedos.glb"
+                        alt="Tournedos Rossini 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>SAUMON TERIYAKI</h3>
+                    <p class="dish-price">2900,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Saumon.glb"
+                        alt="Saumon Teriyaki 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>ESCALOPE DORÉE</h3>
+                    <p class="dish-price">1100,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/AR-Code-1761838630115.glb"
+                        alt="Escalope Dorée 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>RISOTTO ALLA COSTIERA</h3>
+                    <p class="dish-price">2700,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Risotto alla Costiera 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>ESPADON A LA CATALAN</h3>
+                    <p class="dish-price">2300,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Espadon à la Catalan 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOUCHERIE SECTION -->
+        <section id="boucherie" class="menu-section">
+            <h2>NOS PIECES DE BOUCHERIE GRILLEES</h2>
+            
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>STEAK À CHEVAL COEUR FONDU</h3>
+                    <p class="dish-price">1500,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Steak%20a%20cheval%20.glb"
+                        alt="Steak à Cheval 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>MIXETTE DE BROCHETTES</h3>
+                    <p class="dish-price">1800,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Mixette%20de%20brochettes%20.glb"
+                        alt="Mixette de Brochettes 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>BROCHETTE MELFOUF</h3>
+                    <p class="dish-price">2100,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Brochettes%20melfouf.glb"
+                        alt="Brochette Melfouf 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>ENTRECÔTE GRILLÉE</h3>
+                    <p class="dish-price">2500,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Entrecote.glb"
+                        alt="Entrecôte Grillée 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CÔTE DE BŒUF</h3>
+                    <p class="dish-price">3200,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Cote%20de%20b%C5%93uf%20.glb"
+                        alt="Côte de Bœuf 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>FILET DE VEAU</h3>
+                    <p class="dish-price">2700,00 DA</p>
+                    <p class="dish-ingredients">SELON LA DISPONIBILITÉ</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Filet de Veau 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- POISSONS SECTION -->
+        <section id="poissons" class="menu-section">
+            <h2>NOS POISSONS</h2>
+            <p class="section-subtitle">« SELON LES DISPONIBILITÉS »</p>
+            
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CREVETTE ROYALE</h3>
+                    <p class="dish-price">SELON ARRIVAGE</p>
+                    <p class="dish-ingredients">AU CHOIX : GRILLÉE OU EN SAUCE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crevette%20royale.glb"
+                        alt="Crevette Royale 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CALAMARO DORATI</h3>
+                    <p class="dish-price">SELON ARRIVAGE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Calamaro.glb"
+                        alt="Calamaro Dorati 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>LANCOUSTE À LA LUMIÈRE DES HERBES</h3>
+                    <p class="dish-price">SELON ARRIVAGE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Langouste.glb"
+                        alt="Lancouste aux Herbes 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>LOUP DE MER GRILLÉ</h3>
+                    <p class="dish-price">2600,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Loup de Mer Grillée 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>ESPADON GRILLÉ</h3>
+                    <p class="dish-price">2700,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Espadon Grillée 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>LIMON AU BEURRE BLANC</h3>
+                    <p class="dish-price">2700,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Limon au Beurre Blanc 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>SAUMON GRILLÉ</h3>
+                    <p class="dish-price">3400,00 DA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Saumon Grillée 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>PESCE IN FESTA</h3>
+                    <p class="dish-price">SELON ARRIVAGE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Pesce in Festa 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGUETTES SECTION -->
+        <section id="baguettes" class="menu-section">
+            <h2>NOS BAGUETTES FRANÇAISES</h2>
+            <p class="section-subtitle">« ACCOMPAGNÉES DE FRUITS »</p>
+            
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CHICKEN</h3>
+                    <p class="dish-price">550,00 DA</p>
+                    <p class="dish-ingredients">POULET GRILLÉ, FRITE, SAUCE POULET</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Baguette%20chicken.glb"
+                        alt="Chicken Baguette 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>LE FORESTIER</h3>
+                    <p class="dish-price">700,00 DA</p>
+                    <p class="dish-ingredients">POULET À L'OIGNON ET CHAMPIGNON CARAMÉLISÉ, FRITES, GRATINÉE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Bforestier.glb"
+                        alt="Le Forestier Baguette 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>LE SAUVAGE</h3>
+                    <p class="dish-price">750,00 DA</p>
+                    <p class="dish-ingredients">VIANDE HACHÉE, FRITES, SAUCE D'ENTRECÔTE, GRATINÉE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Bsauvage.glb"
+                        alt="Le Sauvage Baguette 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>AU CREVETTES</h3>
+                    <p class="dish-price">900,00 DA</p>
+                    <p class="dish-ingredients">CREVETTES GRILLÉES, FRITES, SAUCE DE CREVETTE, GRATINÉE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Bcrevette.glb"
+                        alt="Au Crevettes Baguette 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>MELFOUF</h3>
+                    <p class="dish-price">900,00 DA</p>
+                    <p class="dish-ingredients">BROCHETTES MELFOUF, FRITES, SAUCE MAISON</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Bmelfouf.glb"
+                        alt="Melfouf Baguette 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>LE NOBLE</h3>
+                    <p class="dish-price">1000,00 DA</p>
+                    <p class="dish-ingredients">ENTRECÔTE GRILLÉE, FRITES, SAUCE D'ENTRECÔTE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Blenoble.glb"
+                        alt="Le Noble Baguette 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>PHILLY CHEESE-STEAK</h3>
+                    <p class="dish-price">1100,00 DA</p>
+                    <p class="dish-ingredients">STEAK GRILLÉ, FRITES, OIGNONS ET POIVRONS GRILLÉS, GRATINÉ AU FROMAGE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Bphilly.glb"
+                        alt="Philly Cheese-Steak 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BURGERS SECTION -->
+        <section id="burgers" class="menu-section">
+            <h2>NOS BURGERS</h2>
+            <p class="section-subtitle">« ACCOMPAGNÉES DE FRITES »</p>
+            
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>LE CROUSTILLANT</h3>
+                    <p class="dish-price">500,00 DA</p>
+                    <p class="dish-ingredients">POULET À LA CHAPELURE, LAITUE, TOMATE, SLICE, SAUCE MAISON</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Le%20croustillant.glb"
+                        alt="Le Croustillant Burger 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>LE CLASSIQUE</h3>
+                    <p class="dish-price">550,00 DA</p>
+                    <p class="dish-ingredients">VIANDE HACHÉE, LAITUE, TOMATE, SLICE, SAUCE MAISON</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Le%20classique.glb"
+                        alt="Le Classique Burger 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>LE BEEF</h3>
+                    <p class="dish-price">650,00 DA</p>
+                    <p class="dish-ingredients">VIANDE HACHÉE, LAITUE, TOMATE, OIGNON, CHEDDAR, SAUCE MAISON</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Le%20beef.glb"
+                        alt="Le Beef Burger 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>LE FORESTIER</h3>
+                    <p class="dish-price">700,00 DA</p>
+                    <p class="dish-ingredients">VIANDE HACHÉE, SALADE, TOMATE, CHAMPIGNON, OIGNON CARAMÉLISÉ, CHEDDAR, SAUCE MAISON</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Burger%20le%20forestier.glb"
+                        alt="Le Forestier Burger 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>LE STEAK</h3>
+                    <p class="dish-price">850,00 DA</p>
+                    <p class="dish-ingredients">VIANDE HACHÉE, 30G FILET MIGNON, SALADE, TOMATE, OIGNON CROUSTILLANT, CHEDDAR, SAUCE MAISON</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Steak%20cheddar.glb"
+                        alt="Le Steak Burger 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>SEB'S GARDEN</h3>
+                    <p class="dish-price">1000,00 DA</p>
+                    <p class="dish-ingredients">VIANDE HACHÉE DOUBLÉE, SALADE, TOMATE, ŒUF, OIGNON CARAMÉLISÉ, CHEDDAR, SAUCE MAISON, GRATINÉE</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Burger%20sebs.glb"
+                        alt="Seb's Garden Burger 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PIZZA SECTION -->
+        <section id="pizza" class="menu-section">
+            <h2>NOS PIZZA</h2>
+            
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>MARGUERITTE</h3>
+                    <p class="dish-price">750,00 DA / 2250,00 DA</p>
+                    <p class="dish-ingredients">SAUCE TOMATE, GRUYÈRE, MOZZARELLA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20Marguerite.glb"
+                        alt="Margueritte Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>VÉGÉTARIENNE</h3>
+                    <p class="dish-price">750,00 DA / 2250,00 DA</p>
+                    <p class="dish-ingredients">SAUCE TOMATE, LÉGUMES, MAÏS, TOMATE CERISE, GRUYÈRE, MOZZARELLA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20vegetarian.glb"
+                        alt="Végétarienne Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>AU THON</h3>
+                    <p class="dish-price">750,00 DA / 2250,00 DA</p>
+                    <p class="dish-ingredients">SAUCE TOMATE, THON, GRUYÈRE, MOZZARELLA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20thon.glb"
+                        alt="Au Thon Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>LA BLANCA</h3>
+                    <p class="dish-price">850,00 DA / 2550,00 DA</p>
+                    <p class="dish-ingredients">SAUCE BLANCHE, POULET, GRUYÈRE, MOZZARELLA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20blanca.glb"
+                        alt="La Blanca Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>PESTO</h3>
+                    <p class="dish-price">900,00 DA / 2550,00 DA</p>
+                    <p class="dish-ingredients">SAUCE TOMATE, SAUCE PESTO, GRUYÈRE, MOZZARELLA, CHAMPIGNONS</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20pesto.glb"
+                        alt="Pesto Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CHÈVRE MIEL</h3>
+                    <p class="dish-price">900,00 DA / 2650,00 DA</p>
+                    <p class="dish-ingredients">SAUCE BLANCHE, POULET, FROMAGE DE CHÈVRE, MIEL, GRUYÈRE, MOZZARELLA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20chevre%20miel.glb"
+                        alt="Chèvre Miel Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>VALHALA</h3>
+                    <p class="dish-price">900,00 DA / 2650,00 DA</p>
+                    <p class="dish-ingredients">SAUCE TOMATE, VIANDE HACHÉE, GRUYÈRE, MOZZARELLA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20Valhalla.glb"
+                        alt="Valhala Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>PARISIENNE</h3>
+                    <p class="dish-price">950,00 DA / 2650,00 DA</p>
+                    <p class="dish-ingredients">SAUCE BLANCHE, POULET, FROMAGE FUMÉ, GRUYÈRE, MOZZARELLA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20Parisienne.glb"
+                        alt="Parisienne Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>BUFFALO</h3>
+                    <p class="dish-price">1000,00 DA / 2850,00 DA</p>
+                    <p class="dish-ingredients">SAUCE TOMATE, VIANDE HACHÉE, OEUF, FROMAGE FUMÉ, GRUYÉRE, MOZARELLA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20bufallo.glb"
+                        alt="Buffalo Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CINQ FROMAGES</h3>
+                    <p class="dish-price">1000,00 DA / 1950,00 DA</p>
+                    <p class="dish-ingredients">SAUCE BLANCHE, BRIE, FROMAGE FUMÉ, CHEDDAR, GRUYÉRE, MOZARELLA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza5%20fromages.glb"
+                        alt="Cinq fromages Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>SICILIENNE</h3>
+                    <p class="dish-price">1000,00 DA / 2250,00 DA</p>
+                    <p class="dish-ingredients">SAUCE TOMATE, ANCHOIS, GRUYÉRE, MOZARELLA, CAPRES</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20thon.glb"
+                        alt="Sicilienne Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>AU CREVETTE</h3>
+                    <p class="dish-price">1100,00 DA / 2400,00 DA</p>
+                    <p class="dish-ingredients">SAUCE TOMATE, CREVETTES, GRUYÉRE, MOZARELLA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20crevettes.glb"
+                        alt="Au crevette Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>AU FRUITS DE MER</h3>
+                    <p class="dish-price">1300,00 DA / 2700,00 DA</p>
+                    <p class="dish-ingredients">SAUCE TOMATE, CREVETTE, POULPE, CALAMAR, SAUMON, GRUYÉRE, MOZARELLA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20fruit%20de%20mer.glb"
+                        alt="Au fruits de mer Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>BURRATA</h3>
+                    <p class="dish-price">1300,00 DA / 2700,00 DA</p>
+                    <p class="dish-ingredients">SAUCE TOMATE, BURRATA, SAUCE PESTO, BASILIC, TRANCHE DE CHEDDAR</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20Burata.glb"
+                        alt="Burrata Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>SEB'S GARDEN</h3>
+                    <p class="dish-price">1400,00 DA / 2500,00 DA</p>
+                    <p class="dish-ingredients">MÉLANGE DU CHEF OU AU CHOIX</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20sebs.glb"
+                        alt="Seb's garden Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>STEAK CHEDDAR</h3>
+                    <p class="dish-price">1400,00 DA / 2500,00 DA</p>
+                    <p class="dish-ingredients">SAUCE TOMATE, STEAK GRILLÉ, SAUCE BALSAMIQUE, GRUYÉRE, CHEDDAR, MOZARELLA</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pizza%20steak.glb"
+                        alt="Steak cheddar Pizza 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOISSONS SECTION -->
+        <section id="boissons" class="menu-section">
+            <h2>NOS BOISSONS FRAÎCHES</h2>
+            
+            <h3 class="drink-category">MILK SHAKES</h3>
+            <div class="drink-grid">
+                <div class="drink-item">
+                    <h4>BANANE</h4>
+                    <p class="drink-price">450,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>FRAISE</h4>
+                    <p class="drink-price">450,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>CARAMEL BEURRE SALÉ</h4>
+                    <p class="drink-price">500,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>CHOCOLAT</h4>
+                    <p class="drink-price">550,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>BANANE CHOCOLAT</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>FRAISE CHOCOLAT</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>CHOCOLAT GOURMAND</h4>
+                    <p class="drink-price">700,00 DA</p>
+                </div>
+            </div>
+
+            <h3 class="drink-category">ICED COFFEE</h3>
+            <div class="drink-grid">
+                <div class="drink-item">
+                    <h4>FRAPPÉ CLASSIQUE</h4>
+                    <p class="drink-price">400,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>ICED LATTE</h4>
+                    <p class="drink-price">400,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>ICED MOCHA</h4>
+                    <p class="drink-price">500,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>ICED LATTE CARAMEL</h4>
+                    <p class="drink-price">500,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>FRAPPÉ PARFUMÉ</h4>
+                    <p class="drink-price">500,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>FRAPPÉ GOURMAND</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+            </div>
+
+            <h3 class="drink-category">MOCKTAILS</h3>
+            <div class="drink-grid">
+                <div class="drink-item">
+                    <h4>SUNRISE</h4>
+                    <p class="drink-price">400,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>PINK LADY</h4>
+                    <p class="drink-price">450,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>CITRON MENTHE</h4>
+                    <p class="drink-price">450,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>PINA COLADA</h4>
+                    <p class="drink-price">500,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>BLUE HAWAII</h4>
+                    <p class="drink-price">500,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>ORANGE CANNELLE</h4>
+                    <p class="drink-price">500,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>PINEAPPLE MINT</h4>
+                    <p class="drink-price">500,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>SUNFLOWER</h4>
+                    <p class="drink-price">550,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>BORA BORA</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>CARNIVAL</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>CLOUDY COLADA</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>PASSION MARTINI</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>BLUEBERRY GARDEN</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>FRUITS ROUGE MENTHOLÉ</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+            </div>
+
+            <h3 class="drink-category">MOCKTAILS GAZIFIÉS</h3>
+            <div class="drink-grid">
+                <div class="drink-item">
+                    <h4>MOLITO CLASSIQUE</h4>
+                    <p class="drink-price">450,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>MOLITO PARFUMÉ</h4>
+                    <p class="drink-price">500,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>MOLITO BLUE SKY</h4>
+                    <p class="drink-price">500,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>MOLITO BLUEBERRY GARDEN</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>CHERRY CARRÉ</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>MANGO RIZ</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>PITCHI LITCHI</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>LARMES DES ROSÉES</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+            </div>
+
+            <h3 class="drink-category">JUS PRESSÉS</h3>
+            <div class="drink-grid">
+                <div class="drink-item">
+                    <h4>JUS DE SAISON</h4>
+                    <p class="drink-price">400,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>JUS DE CITRON</h4>
+                    <p class="drink-price">450,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>JUS D'ORANGE</h4>
+                    <p class="drink-price">500,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>JUS EXOTIQUE</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>JUS DE FRUITS ROUGE</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+                <div class="drink-item">
+                    <h4>JUS DE COCKTAIL</h4>
+                    <p class="drink-price">600,00 DA</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESSERTS SECTION -->
+        <section id="desserts" class="menu-section">
+            <h2>NOS SPÉCIALITÉS SUCRÉES</h2>
+            <p class="section-subtitle">Pâtes au choix : " Crêpe / Gaufre / Pancake / Croissant "</p>
+            
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TROIS CHOCOLATS BELGES "Crepe"</h3>
+                    <p class="dish-price">500,00 DA</p>
+                    <p class="dish-ingredients">NOIR + BLANC + AU LAIT</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crepe%203%20chocolat.glb"
+                        alt="Trois Chocolats Belges 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TROIS CHOCOLATS BELGES "gaufre"</h3>
+                    <p class="dish-price">500,00 DA</p>
+                    <p class="dish-ingredients">NOIR + BLANC + AU LAIT</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Gaufre%203%20chocolat.glb"
+                        alt="Trois Chocolats Belges 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TROIS CHOCOLATS BELGES "pancake"</h3>
+                    <p class="dish-price">500,00 DA</p>
+                    <p class="dish-ingredients">NOIR + BLANC + AU LAIT</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pancake%203ch.glb"
+                        alt="Trois Chocolats Belges 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+            
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CARAMEL BEURRE SALÉ "crepe"</h3>
+                    <p class="dish-price">500,00 DA</p>
+                    <p class="dish-ingredients">CRÈME CITRONNÉE + CHOCOLAT BLANC</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crepe%20beure%20sale%20.glb"
+                        alt="Caramel Beurre Salé 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CARAMEL BEURRE SALÉ "gaufre"</h3>
+                    <p class="dish-price">500,00 DA</p>
+                    <p class="dish-ingredients">CRÈME CITRONNÉE + CHOCOLAT BLANC</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Gaufre%20BS.glb"
+                        alt="Caramel Beurre Salé 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CARAMEL BEURRE SALÉ "pancake"</h3>
+                    <p class="dish-price">500,00 DA</p>
+                    <p class="dish-ingredients">CRÈME CITRONNÉE + CHOCOLAT BLANC</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pancake%20BS.glb"
+                        alt="Caramel Beurre Salé 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+            
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TROIS CHOCOLATS BELGES + UN FRUIT "crepe"</h3>
+                    <p class="dish-price">650,00 DA</p>
+                    <p class="dish-ingredients">NOIR + BLANC + AU LAIT</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crepe3chocolat%201%20fruit.glb"
+                        alt="Trois Chocolats + Fruit 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TROIS CHOCOLATS BELGES + UN FRUIT "gaufre"</h3>
+                    <p class="dish-price">650,00 DA</p>
+                    <p class="dish-ingredients">NOIR + BLANC + AU LAIT</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Gaufre%203c%201f.glb"
+                        alt="Trois Chocolats + Fruit 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TROIS CHOCOLATS BELGES + UN FRUIT "pancake"</h3>
+                    <p class="dish-price">650,00 DA</p>
+                    <p class="dish-ingredients">NOIR + BLANC + AU LAIT</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pancake%203c%201f.glb"
+                        alt="Trois Chocolats + Fruit 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+           
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TROIS CHOCOLATS BELGES + TROIS FRUITS "Crepe"</h3>
+                    <p class="dish-price">750,00 DA</p>
+                    <p class="dish-ingredients">NOIR + BLANC + AU LAIT</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crepe%203c%203f.glb"
+                        alt="Trois Chocolats + Trois Fruits 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TROIS CHOCOLATS BELGES + TROIS FRUITS "Gaufre"</h3>
+                    <p class="dish-price">750,00 DA</p>
+                    <p class="dish-ingredients">NOIR + BLANC + AU LAIT</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Gaufre%203c%203f.glb"
+                        alt="Trois Chocolats + Trois Fruits 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TROIS CHOCOLATS BELGES + TROIS FRUITS "Pancake"</h3>
+                    <p class="dish-price">750,00 DA</p>
+                    <p class="dish-ingredients">NOIR + BLANC + AU LAIT</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pancake%203c%203f.glb"
+                        alt="Trois Chocolats + Trois Fruits 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CHOCOLAT BELGE PISTACHE "Crepe"</h3>
+                    <p class="dish-price">900,00 DA</p>
+                    <p class="dish-ingredients">+ MÉLANGE DE FRUITS SECS</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Crepe%20pistache.glb"
+                        alt="Chocolat Belge Pistache 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CHOCOLAT BELGE PISTACHE "Gaufre"</h3>
+                    <p class="dish-price">900,00 DA</p>
+                    <p class="dish-ingredients">+ MÉLANGE DE FRUITS SECS</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Gaufre%20pistache.glb"
+                        alt="Chocolat Belge Pistache 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CHOCOLAT BELGE PISTACHE "Pancake"</h3>
+                    <p class="dish-price">900,00 DA</p>
+                    <p class="dish-ingredients">+ MÉLANGE DE FRUITS SECS</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Pancake%20pistache.glb"
+                        alt="Chocolat Belge Pistache 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>DEUX CHOCOLATS + CRÈME LOTUS</h3>
+                    <p class="dish-price">800,00 DA</p>
+                    <p class="dish-ingredients">CHOCOLAT AU LAIT + BLANC</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Deux Chocolats + Crème Lotus 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>CHOCOLAT BELGE PISTACHE</h3>
+                    <p class="dish-price">900,00 DA</p>
+                    <p class="dish-ingredients">+ MÉLANGE DE FRUITS SECS</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Chocolat Belge Pistache 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+
+            <div class="dish-card">
+                <div class="dish-info">
+                    <h3>TROIS CHOCOLATS BELGES + FRUITS ROUGES</h3>
+                    <p class="dish-price">850,00 DA</p>
+                    <p class="dish-ingredients">NOIR + BLANC + AU LAIT</p>
+                </div>
+                <div class="dish-model">
+                    <model-viewer 
+                        src="YOUR_GLB_FILE_LINK_HERE"
+                        alt="Trois Chocolats + Fruits Rouges 3D model"
+                        ar
+                        ar-modes="webxr scene-viewer quick-look"
+                        environment-image="neutral"
+                        camera-controls>
+                    </model-viewer>
+                    <button class="agrandir-button">Agrandir</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Seb's Garden</h3>
+                <p>L'excellence culinaire rencontre la technologie de pointe</p>
+                <p>Un art de recevoir, une cuisine d'émotions</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-phone"></i> 0562.70.62.19</p>
+                <p><i class="fas fa-map-marker-alt"></i> VMQF+7F Tlemcen</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/restaurant_sebs_garden?igsh=MWt3MHo4cnE2cWJ4dA==" class="social-icon" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1AiiCg1vph/?mibextid=wwXIfr" class="social-icon" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Horaires</h3>
+                <p>Lundi - Vendredi: 11:00 - 23:00</p>
+                <p>Samedi - Dimanche: 10:00 - 00:00</p>
+                <p>Service continu</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2024 Seb's Garden. Tous droits réservés.</p>
+            <p>Où l'excellence culinaire rencontre la technologie de pointe</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Menu Functionality -->
+    <script>
+        // Menu Section Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const sectionBtns = document.querySelectorAll('.section-btn');
+            const menuSections = document.querySelectorAll('.menu-section');
+            
+            sectionBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const sectionId = btn.getAttribute('data-section');
+                    
+                    // Update active button
+                    sectionBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Show selected section
+                    menuSections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === sectionId) {
+                            section.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            // Agrandir Button Functionality
+            document.querySelectorAll('.agrandir-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const modelViewer = this.previousElementSibling;
+                    if (modelViewer.tagName === 'MODEL-VIEWER') {
+                        modelViewer.style.width = '500px';
+                        modelViewer.style.height = '500px';
+                        setTimeout(() => {
+                            modelViewer.style.width = '300px';
+                            modelViewer.style.height = '300px';
+                        }, 3000);
+                    }
+                });
+            });
+            
+            // Hamburger Menu Toggle
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
