@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambiance Coffee | Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="ambiance.jpg" alt="Ambiance Coffee Logo" id="logo-image">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu & Patisserie</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you. Visit us, give us a call, or send a message.</p>
+        </div>
+    </header>
+
+    <!-- Contact Content -->
+    <main class="container contact-page">
+        <div class="contact-grid">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2><i class="fas fa-store contact-icon"></i> Visit Our Café</h2>
+                <p class="contact-text">Experience the warmth and aroma of Ambiance Coffee firsthand.</p>
+                
+                <div class="info-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                    <p>123 Serenity Street<br>Your City, State 12345</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-clock"></i> Hours</h3>
+                    <p><strong>Monday – Friday:</strong> 7:00 AM – 10:00 PM<br>
+                       <strong>Saturday – Sunday:</strong> 8:00 AM – 11:00 PM</p>
+                </div>
+                <div class="info-card">
+                    <h3><i class="fas fa-phone"></i> Phone & Email</h3>
+                    <p><strong>Phone:</strong> (123) 456-7890<br>
+                       <strong>Email:</strong> hello@ambiancecoffee.com</p>
+                </div>
+
+                <div class="social-contact">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i> Twitter</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <h2><i class="fas fa-envelope contact-icon"></i> Send a Message</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" required>
+                            <span>I agree to the privacy policy and wish to be contacted by Ambiance Coffee.</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Map Placeholder -->
+        <div class="map-container">
+            <h2><i class="fas fa-map-marked-alt"></i> Find Us</h2>
+            <div class="map-placeholder">
+                <!-- Replace with actual Google Maps embed -->
+                <div class="map-frame">
+                    <img src="https://via.placeholder.com/800x400/EEE/CCC?text=Google+Map+Embed+Here" alt="Map placeholder">
+                    <div class="map-overlay">
+                        <p>Interactive map will be embedded here.</p>
+                        <a href="#" class="btn btn-map">Open in Google Maps</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="ambiance.jpg" alt="Ambiance Coffee Logo">
+                <h3>Ambiance Coffee</h3>
+                <p class="footer-tagline">with ANBINONE La Patisserie</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Visit Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Serenity Street, Your City</p>
+                <p><i class="fas fa-clock"></i> Mon-Sun: 7:00 AM - 10:00 PM</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Our Ambiance</h4>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Ambiance Coffee. ANBINONE La patisserie is a trademark. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission feedback
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your message has been sent. We will respond within 24 hours.');
+            this.reset();
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
