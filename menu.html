@@ -135,11 +135,17 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Bouton Agrandir pour modèles 3D */
-        .agrandir-btn {
+        /* Boutons pour modèles 3D */
+        .model-buttons {
             position: absolute;
             bottom: 10px;
             right: 10px;
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        
+        .model-btn {
             background: var(--black);
             color: white;
             border: none;
@@ -150,12 +156,33 @@
             display: flex;
             align-items: center;
             gap: 5px;
-            z-index: 10;
             transition: all 0.3s ease;
         }
-        .agrandir-btn:hover {
+        
+        .model-btn:hover {
             background: var(--gold);
             color: var(--black);
+        }
+        
+        .ar-btn {
+            background: #4285f4;
+        }
+        
+        .ar-btn:hover {
+            background: #3367d6;
+        }
+        
+        /* Badge AR pour items compatibles */
+        .ar-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4285f4, #34a853);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 8px;
+            vertical-align: middle;
+            font-weight: bold;
         }
 
         /* Modal pour agrandir le modèle 3D */
@@ -190,6 +217,45 @@
         .modal model-viewer {
             width: 100%;
             height: 100%;
+        }
+
+        /* AR Instructions Overlay */
+        .ar-instructions {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            z-index: 1001;
+            display: none;
+            max-width: 400px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .ar-instructions h4 {
+            margin: 0 0 8px 0;
+            font-size: 1rem;
+            color: var(--gold);
+        }
+        
+        .ar-instructions p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+        
+        .close-ar-instructions {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
         }
 
         /* Badge pour items avec image */
@@ -232,40 +298,58 @@
     <!-- Menu Header -->
     <header class="page-header">
         <div class="container">
-            <h1>Notre Menu Complet</h1>
-            <p>Découvrez nos délicieuses pâtisseries, boissons et plats préparés avec passion.</p>
+            <h1>Notre Menu Complet <span class="ar-badge">AR DISPONIBLE</span></h1>
+            <p>Découvrez nos délicieuses pâtisseries, boissons et plats préparés avec passion. 
+               <strong>Visualisez nos pâtisseries en réalité augmentée sur votre mobile!</strong></p>
         </div>
     </header>
+
+    <!-- AR Instructions -->
+    <div class="ar-instructions" id="arInstructions">
+        <button class="close-ar-instructions" onclick="closeARInstructions()">×</button>
+        <h4>Comment utiliser la réalité augmentée :</h4>
+        <p><i class="fas fa-mobile-alt"></i> <strong>Sur mobile uniquement</strong></p>
+        <p><i class="fas fa-android"></i> Android : nécessite ARCore installé</p>
+        <p><i class="fas fa-apple"></i> iOS : iOS 12+ avec AR Quick Look</p>
+        <p><i class="fas fa-vr-cardboard"></i> Pointez votre caméra vers une surface plane</p>
+    </div>
 
     <!-- Sections Menu -->
     <main class="container menu-section">
         <!-- Section Gâteaux -->
         <div class="menu-category">
-            <h2 class="category-title">Gâteaux</h2>
+            <h2 class="category-title">Gâteaux <span class="ar-badge">AR</span></h2>
             <div class="menu-items">
                <!-- Trompe l'oeil -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">TROMPE L'OEIL</h3>
+                        <h3 class="item-name">TROMPE L'OEIL <span class="ar-badge">AR</span></h3>
                         <span class="item-price">200<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
                         <model-viewer
                             src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Trompe%20l%E2%80%99%C5%93il.glb"
-                            alt="Modèle 3D d'un millefeuille"
+                            alt="Modèle 3D d'un Trompe l'oeil"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <!-- Millefeuille -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">MILLEFEUILLE</h3>
+                        <h3 class="item-name">MILLEFEUILLE <span class="ar-badge">AR</span></h3>
                         <span class="item-price">200<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -274,18 +358,25 @@
                             alt="Modèle 3D d'un millefeuille"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Gâteau -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">GÂTEAU</h3>
+                        <h3 class="item-name">GÂTEAU <span class="ar-badge">AR</span></h3>
                         <span class="item-price">350<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -294,18 +385,25 @@
                             alt="Modèle 3D d'un gâteau"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Viennoiserie -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">VIENNOISERIE</h3>
+                        <h3 class="item-name">VIENNOISERIE <span class="ar-badge">AR</span></h3>
                         <span class="item-price">-</span>
                     </div>
                     <div class="item-media">
@@ -314,11 +412,18 @@
                             alt="Modèle 3D de viennoiseries"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -326,12 +431,12 @@
 
         <!-- Section Salades -->
         <div class="menu-category">
-            <h2 class="category-title">Salades</h2>
+            <h2 class="category-title">Salades <span class="ar-badge">AR</span></h2>
             <div class="menu-items">
                 <!-- La César -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">LA CÉSAR</h3>
+                        <h3 class="item-name">LA CÉSAR <span class="ar-badge">AR</span></h3>
                         <span class="item-price">400<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -340,18 +445,25 @@
                             alt="Modèle 3D d'une salade César"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Salade de Pâte -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">SALADE DE PÂTE</h3>
+                        <h3 class="item-name">SALADE DE PÂTE <span class="ar-badge">AR</span></h3>
                         <span class="item-price">400<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -360,11 +472,18 @@
                             alt="Modèle 3D d'une salade de pâtes"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -372,13 +491,13 @@
 
         <!-- Section Œuf au choix -->
         <div class="menu-category">
-            <h2 class="category-title">Œuf au choix</h2>
+            <h2 class="category-title">Œuf au choix <span class="ar-badge">AR</span></h2>
             <p class="category-subtitle">De 07:30 à 14:00</p>
             <div class="menu-items">
                 <!-- Au Plat -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">AU PLAT</h3>
+                        <h3 class="item-name">AU PLAT <span class="ar-badge">AR</span></h3>
                         <span class="item-price">250<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -387,18 +506,25 @@
                             alt="Modèle 3D d'œufs au plat"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Brouillé -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">BROUILLÉ</h3>
+                        <h3 class="item-name">BROUILLÉ <span class="ar-badge">AR</span></h3>
                         <span class="item-price">250<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -407,18 +533,25 @@
                             alt="Modèle 3D d'œufs brouillés"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Omelette -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">OMELETTE FROMAGE OU CHAMPIGNONS</h3>
+                        <h3 class="item-name">OMELETTE FROMAGE OU CHAMPIGNONS <span class="ar-badge">AR</span></h3>
                         <span class="item-price">500<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -427,18 +560,25 @@
                             alt="Modèle 3D d'une omelette"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Œuf Khli3 -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">ŒUF KHLI3</h3>
+                        <h3 class="item-name">ŒUF KHLI3 <span class="ar-badge">AR</span></h3>
                         <span class="item-price">600<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -447,11 +587,18 @@
                             alt="Modèle 3D d'œuf khli3"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -459,12 +606,12 @@
 
         <!-- Section Mini Sandwich -->
         <div class="menu-category">
-            <h2 class="category-title">Mini Sandwich</h2>
+            <h2 class="category-title">Mini Sandwich <span class="ar-badge">AR</span></h2>
             <div class="menu-items">
                 <!-- Thon Crudités -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">THON CRUDITÉS</h3>
+                        <h3 class="item-name">THON CRUDITÉS <span class="ar-badge">AR</span></h3>
                         <span class="item-price">300<span class="currency">Da</span></span>
                     </div>
                     <p class="item-desc">Tomate, laitue, œuf dur, thon, sauce.</p>
@@ -474,18 +621,25 @@
                             alt="Modèle 3D d'un sandwich thon crudités"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Poulet Rôti -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">POULET RÔTI</h3>
+                        <h3 class="item-name">POULET RÔTI <span class="ar-badge">AR</span></h3>
                         <span class="item-price">300<span class="currency">Da</span></span>
                     </div>
                     <p class="item-desc">Tomate, laitue, poulet rôti, fromage.</p>
@@ -495,18 +649,25 @@
                             alt="Modèle 3D d'un sandwich poulet rôti"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- 4 Fromages -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">4 FROMAGES</h3>
+                        <h3 class="item-name">4 FROMAGES <span class="ar-badge">AR</span></h3>
                         <span class="item-price">300<span class="currency">Da</span></span>
                     </div>
                     <p class="item-desc">4 fromages.</p>
@@ -516,18 +677,25 @@
                             alt="Modèle 3D d'un sandwich 4 fromages"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Nordique -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">NORDIQUE</h3>
+                        <h3 class="item-name">NORDIQUE <span class="ar-badge">AR</span></h3>
                         <span class="item-price">500<span class="currency">Da</span></span>
                     </div>
                     <p class="item-desc">Tomate, laitue, saumon, fromage.</p>
@@ -537,18 +705,25 @@
                             alt="Modèle 3D d'un sandwich nordique"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Mini Burger -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">MINI BURGER</h3>
+                        <h3 class="item-name">MINI BURGER <span class="ar-badge">AR</span></h3>
                         <span class="item-price">300<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -557,18 +732,25 @@
                             alt="Modèle 3D d'un mini burger"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Tacos -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">TACOS</h3>
+                        <h3 class="item-name">TACOS <span class="ar-badge">AR</span></h3>
                         <span class="item-price">500<span class="currency">Da</span></span>
                     </div>
                     <p class="item-desc">Poulet mariné, sauce.</p>
@@ -578,11 +760,18 @@
                             alt="Modèle 3D d'un tacos"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -590,12 +779,12 @@
 
         <!-- Section Petit Déjeuner -->
         <div class="menu-category">
-            <h2 class="category-title">Petit Déjeuner</h2>
+            <h2 class="category-title">Petit Déjeuner <span class="ar-badge">AR</span></h2>
             <div class="menu-items">
                 <!-- Classique -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">CLASSIQUE</h3>
+                        <h3 class="item-name">CLASSIQUE <span class="ar-badge">AR</span></h3>
                         <span class="item-price">500<span class="currency">Da</span></span>
                     </div>
                     <p class="item-desc">Café au lait/ou chocolat chaud, viennoiserie, jus pressé.</p>
@@ -605,18 +794,25 @@
                             alt="Modèle 3D d'un petit déjeuner classique"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Gourmand -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">GOURMAND</h3>
+                        <h3 class="item-name">GOURMAND <span class="ar-badge">AR</span></h3>
                         <span class="item-price">800<span class="currency">Da</span></span>
                     </div>
                     <p class="item-desc">Café au lait/ou chocolat chaud, viennoiserie, confiture, jus pressé, œuf au choix.</p>
@@ -626,11 +822,18 @@
                             alt="Modèle 3D d'un petit déjeuner gourmand"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -638,12 +841,12 @@
 
         <!-- Section Boissons Chaudes -->
         <div class="menu-category">
-            <h2 class="category-title">Boissons Chaudes</h2>
+            <h2 class="category-title">Boissons Chaudes <span class="ar-badge">AR</span></h2>
             <div class="menu-items">
                 <!-- Expresso -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">ESPRESSO</h3>
+                        <h3 class="item-name">ESPRESSO <span class="ar-badge">AR</span></h3>
                         <span class="item-price">200<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -652,18 +855,25 @@
                             alt="Modèle 3D d'un expresso"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Café au Lait -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">CAFÉ AU LAIT</h3>
+                        <h3 class="item-name">CAFÉ AU LAIT <span class="ar-badge">AR</span></h3>
                         <span class="item-price">150<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -672,18 +882,25 @@
                             alt="Modèle 3D d'un café au lait"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Chocolat Chaud -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">CHOCOLAT CHAUD</h3>
+                        <h3 class="item-name">CHOCOLAT CHAUD <span class="ar-badge">AR</span></h3>
                         <span class="item-price">300<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -692,18 +909,25 @@
                             alt="Modèle 3D d'un chocolat chaud"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Cappuccino -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">CAPPUCINO</h3>
+                        <h3 class="item-name">CAPPUCINO <span class="ar-badge">AR</span></h3>
                         <span class="item-price">250<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -712,18 +936,25 @@
                             alt="Modèle 3D d'un cappuccino"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Latte Machiato Caramel -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">LATTE MACHIATO CARAMEL</h3>
+                        <h3 class="item-name">LATTE MACHIATO CARAMEL <span class="ar-badge">AR</span></h3>
                         <span class="item-price">400<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -732,18 +963,25 @@
                             alt="Modèle 3D d'un latte machiato caramel"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Chocolat Viennois -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">CHOCOLAT VIENNOIS</h3>
+                        <h3 class="item-name">CHOCOLAT VIENNOIS <span class="ar-badge">AR</span></h3>
                         <span class="item-price">500<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -752,18 +990,25 @@
                             alt="Modèle 3D d'un chocolat viennois"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Café Bombon -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">CAFÉ BOMBON</h3>
+                        <h3 class="item-name">CAFÉ BOMBON <span class="ar-badge">AR</span></h3>
                         <span class="item-price">300<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -772,18 +1017,25 @@
                             alt="Modèle 3D d'un café bombon"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Café Illy / Nespresso -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">CAFÉ ILLY / NESPRESSO</h3>
+                        <h3 class="item-name">CAFÉ ILLY / NESPRESSO <span class="ar-badge">AR</span></h3>
                         <span class="item-price">300<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -792,18 +1044,25 @@
                             alt="Modèle 3D d'un café Illy/Nespresso"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Café Americano -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">CAFÉ AMÉRICANO</h3>
+                        <h3 class="item-name">CAFÉ AMÉRICANO <span class="ar-badge">AR</span></h3>
                         <span class="item-price">250<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -812,18 +1071,25 @@
                             alt="Modèle 3D d'un café americano"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Thé -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">THÉ</h3>
+                        <h3 class="item-name">THÉ <span class="ar-badge">AR</span></h3>
                         <span class="item-price">200<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
@@ -832,11 +1098,18 @@
                             alt="Modèle 3D d'un thé"
                             camera-controls
                             auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
                             shadow-intensity="1">
                         </model-viewer>
-                        <button class="agrandir-btn" onclick="openModal(this)">
-                            <i class="fas fa-expand"></i> Agrandir
-                        </button>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1470,6 +1743,8 @@
                 alt="Modèle 3D agrandi"
                 camera-controls
                 auto-rotate
+                ar
+                ar-modes="webxr scene-viewer quick-look"
                 shadow-intensity="1"
                 style="width:100%; height:100%;">
             </model-viewer>
@@ -1527,6 +1802,65 @@
             document.getElementById('modelModal').style.display = 'none';
         }
 
+        // Fonction pour lancer la vue AR
+        function launchAR(button) {
+            const menuItem = button.closest('.menu-item');
+            const modelViewer = menuItem.querySelector('model-viewer');
+            
+            if (modelViewer) {
+                // Vérifier si AR est supporté
+                if ('ar' in modelViewer) {
+                    try {
+                        // Activer le mode AR
+                        modelViewer.activateAR();
+                    } catch (error) {
+                        showARInstructions();
+                        console.log("AR non disponible:", error);
+                    }
+                } else {
+                    showARInstructions();
+                }
+            }
+        }
+
+        // Afficher les instructions AR
+        function showARInstructions() {
+            const arInstructions = document.getElementById('arInstructions');
+            arInstructions.style.display = 'block';
+            
+            // Masquer automatiquement après 8 secondes
+            setTimeout(() => {
+                arInstructions.style.display = 'none';
+            }, 8000);
+        }
+
+        // Fermer les instructions AR
+        function closeARInstructions() {
+            document.getElementById('arInstructions').style.display = 'none';
+        }
+
+        // Détecter la compatibilité AR
+        function detectARSupport() {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            const arBadges = document.querySelectorAll('.ar-badge');
+            
+            if (!isMobile) {
+                arBadges.forEach(badge => {
+                    badge.style.opacity = '0.5';
+                    badge.title = "AR disponible uniquement sur mobile";
+                });
+                
+                // Avertissement pour les utilisateurs desktop
+                const arButtons = document.querySelectorAll('.ar-btn');
+                arButtons.forEach(button => {
+                    button.disabled = true;
+                    button.title = "AR disponible uniquement sur mobile";
+                    button.style.opacity = '0.6';
+                    button.style.cursor = 'not-allowed';
+                });
+            }
+        }
+
         // Fermer le modal en cliquant à l'extérieur
         document.getElementById('modelModal').addEventListener('click', function(e) {
             if (e.target === this) {
@@ -1543,6 +1877,9 @@
 
         // Définir l'année en cours dans le footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Détecter la compatibilité AR au chargement
+        document.addEventListener('DOMContentLoaded', detectARSupport);
     </script>
     <script src="script.js"></script>
 </body>
