@@ -323,8 +323,8 @@
                <!-- Trompe l'oeil -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">TROMPE L'OEIL <span class="ar-badge">AR</span></h3>
-                        <span class="item-price">200<span class="currency">Da</span></span>
+                        <h3 class="item-name">TROMPE L'OEIL <span class="ar-badge">3D</span></h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
                     </div>
                     <div class="item-media">
                         <model-viewer
@@ -346,33 +346,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Millefeuille -->
-                <div class="menu-item">
-                    <div class="item-header">
-                        <h3 class="item-name">MILLEFEUILLE <span class="ar-badge">AR</span></h3>
-                        <span class="item-price">200<span class="currency">Da</span></span>
-                    </div>
-                    <div class="item-media">
-                        <model-viewer
-                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-                            alt="Modèle 3D d'un millefeuille"
-                            camera-controls
-                            auto-rotate
-                            ar
-                            ar-modes="webxr scene-viewer quick-look"
-                            shadow-intensity="1">
-                        </model-viewer>
-                        <div class="model-buttons">
-                            <button class="model-btn ar-btn" onclick="launchAR(this)">
-                                <i class="fas fa-cube"></i> Voir en AR
-                            </button>
-                            <button class="model-btn" onclick="openModal(this)">
-                                <i class="fas fa-expand"></i> Agrandir
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
+                
                 <!-- Gâteau -->
                 <div class="menu-item">
                     <div class="item-header">
@@ -408,7 +382,7 @@
                     </div>
                     <div class="item-media">
                         <model-viewer
-                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Vinoisserie%202.glb"
                             alt="Modèle 3D de viennoiseries"
                             camera-controls
                             auto-rotate
@@ -419,6 +393,32 @@
                         <div class="model-buttons">
                             <button class="model-btn ar-btn" onclick="launchAR(this)">
                                 <i class="fas fa-cube"></i> Voir en AR
+                            </button>
+                            <button class="model-btn" onclick="openModal(this)">
+                                <i class="fas fa-expand"></i> Agrandir
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+            <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">VIENNOISERIE <span class="ar-badge">AR</span></h3>
+                        <span class="item-price">-</span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://pub-72b1924cc2494065a2af6bf69f360686.r2.dev/Vinoisserie%201.glb"
+                            alt="Modèle 3D de viennoiseries"
+                            camera-controls
+                            auto-rotate
+                            ar
+                            ar-modes="webxr scene-viewer quick-look"
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <div class="model-buttons">
+                            <button class="model-btn ar-btn" onclick="launchAR(this)">
+                                <i class="fas fa-cube"></i> Voir a table
                             </button>
                             <button class="model-btn" onclick="openModal(this)">
                                 <i class="fas fa-expand"></i> Agrandir
