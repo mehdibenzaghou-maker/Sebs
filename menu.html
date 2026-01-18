@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ambiance Coffee | Menu</title>
+    <title>Ambiance la patisserie | Menu</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
@@ -79,7 +79,7 @@
             line-height: 1.5;
         }
 
-        /* 3D Viewer Section */
+        /* Section Visionneuse 3D */
         #model-viewer-section {
             background: var(--cream);
             padding: 3rem 0;
@@ -135,7 +135,7 @@
             color: var(--black);
         }
 
-        /* Patisserie Badge */
+        /* Badge Pâtisserie */
         .patisserie-badge {
             display: inline-block;
             background: var(--gold);
@@ -153,11 +153,11 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="ambiance.png" alt="Ambiance Coffee Logo" id="logo-image">
+                <img src="ambiance.png" alt="Logo Ambiance la patisserie" id="logo-image">
             </a>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html" class="active">Menu & Patisserie</a></li>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="menu.html" class="active">Menu & Pâtisserie</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <button class="hamburger" id="hamburger">
@@ -169,21 +169,21 @@
     <!-- Menu Header -->
     <header class="page-header">
         <div class="container">
-            <h1>Our Menu</h1>
-            <p>Discover our handcrafted coffee beverages and exquisite pastries from <span class="gold-accent">ANBINONE La Patisserie</span>.</p>
+            <h1>Notre Menu</h1>
+            <p>Découvrez nos boissons caféinées artisanales et nos pâtisseries exquises de <span class="gold-accent">Ambiance La Pâtisserie</span>.</p>
         </div>
     </header>
 
-    <!-- 3D Model Viewer Section -->
+    <!-- Section Visionneuse 3D -->
     <section id="model-viewer-section">
         <div class="container">
-            <h2 class="model-title">Featured Creation in 3D</h2>
-            <p class="section-subtitle" style="text-align:center; margin-bottom:2rem;">Explore our signature pastry in detail. Use the buttons to zoom.</p>
+            <h2 class="model-title">Création Signature en 3D</h2>
+            <p class="section-subtitle" style="text-align:center; margin-bottom:2rem;">Explorez notre pâtisserie signature en détail. Utilisez les boutons pour zoomer.</p>
             <div class="model-container">
-                <!-- Replace with your actual .glb/.gltf model URL -->
+                <!-- Remplacez par votre véritable modèle .glb/.gltf -->
                 <model-viewer
                     src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-                    alt="A 3D model of a featured pastry"
+                    alt="Un modèle 3D d'une pâtisserie signature"
                     camera-controls
                     auto-rotate
                     ar
@@ -204,87 +204,87 @@
         </div>
     </section>
 
-    <!-- Menu Sections -->
+    <!-- Sections Menu -->
     <main class="container menu-section">
-        <!-- Coffee Section -->
+        <!-- Section Café -->
         <div class="menu-category">
-            <h2 class="category-title">Coffee & Espresso</h2>
+            <h2 class="category-title">Café & Expresso</h2>
             <div class="menu-items">
-                <!-- Item 1 -->
+                <!-- Article 1 -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">Espresso</h3>
-                        <span class="item-price">$3.50</span>
+                        <h3 class="item-name">Expresso</h3>
+                        <span class="item-price">3,50 €</span>
                     </div>
-                    <p class="item-desc">A rich, concentrated shot of our finest single-origin beans.</p>
+                    <p class="item-desc">Un shot riche et concentré de nos meilleurs grains d'origine unique.</p>
                 </div>
-                <!-- Item 2 -->
+                <!-- Article 2 -->
                 <div class="menu-item">
                     <div class="item-header">
                         <h3 class="item-name">Cappuccino</h3>
-                        <span class="item-price">$4.75</span>
+                        <span class="item-price">4,75 €</span>
                     </div>
-                    <p class="item-desc">Perfectly balanced espresso with steamed milk and a thick layer of microfoam.</p>
+                    <p class="item-desc">Expresso parfaitement équilibré avec du lait vapeur et une épaisse couche de micro-mousse.</p>
                 </div>
-                <!-- Item 3 -->
+                <!-- Article 3 -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">Pour Over</h3>
-                        <span class="item-price">$5.00</span>
+                        <h3 class="item-name">Café Filtre</h3>
+                        <span class="item-price">5,00 €</span>
                     </div>
-                    <p class="item-desc">Single-origin brew highlighting nuanced floral and fruity notes.</p>
+                    <p class="item-desc">Infusion d'origine unique mettant en valeur des notes florales et fruitées nuancées.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Patisserie Section -->
+        <!-- Section Pâtisserie -->
         <div class="menu-category">
-            <h2 class="category-title">ANBINONE La Patisserie</h2>
+            <h2 class="category-title">Ambiance La Pâtisserie</h2>
             <div class="menu-items">
-                <!-- Item 1 -->
+                <!-- Article 1 -->
                 <div class="menu-item">
                     <div class="item-header">
                         <h3 class="item-name">Croissant <span class="patisserie-badge">Signature</span></h3>
-                        <span class="item-price">$4.25</span>
+                        <span class="item-price">4,25 €</span>
                     </div>
-                    <p class="item-desc">Buttery, flaky, and baked fresh every morning.</p>
+                    <p class="item-desc">Beurré, feuilleté et cuit frais tous les matins.</p>
                 </div>
-                <!-- Item 2 -->
+                <!-- Article 2 -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">Macaron Assortment</h3>
-                        <span class="item-price">$12.00</span>
+                        <h3 class="item-name">Assortiment de Macarons</h3>
+                        <span class="item-price">12,00 €</span>
                     </div>
-                    <p class="item-desc">Six delicate French macarons in seasonal flavors.</p>
+                    <p class="item-desc">Six délicats macarons français aux saveurs de saison.</p>
                 </div>
-                <!-- Item 3 -->
+                <!-- Article 3 -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">Chocolate Éclair</h3>
-                        <span class="item-price">$6.50</span>
+                        <h3 class="item-name">Éclair au Chocolat</h3>
+                        <span class="item-price">6,50 €</span>
                     </div>
-                    <p class="item-desc">Choux pastry filled with vanilla cream and topped with dark chocolate.</p>
+                    <p class="item-desc">Pâte à choux fourrée à la crème vanille et nappée de chocolat noir.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Tea & Other -->
+        <!-- Thé & Autres -->
         <div class="menu-category">
-            <h2 class="category-title">Tea & More</h2>
+            <h2 class="category-title">Thé & Plus</h2>
             <div class="menu-items">
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">Artisan Tea Selection</h3>
-                        <span class="item-price">$4.00</span>
+                        <h3 class="item-name">Sélection de Thés Artisanaux</h3>
+                        <span class="item-price">4,00 €</span>
                     </div>
-                    <p class="item-desc">Curated loose-leaf teas from around the world.</p>
+                    <p class="item-desc">Thés en vrac sélectionnés à travers le monde.</p>
                 </div>
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">Hot Chocolate</h3>
-                        <span class="item-price">$5.25</span>
+                        <h3 class="item-name">Chocolat Chaud</h3>
+                        <span class="item-price">5,25 €</span>
                     </div>
-                    <p class="item-desc">Rich, velvety Belgian dark chocolate with whipped cream.</p>
+                    <p class="item-desc">Chocolat noir belge riche et velouté avec de la crème fouettée.</p>
                 </div>
             </div>
         </div>
@@ -294,36 +294,36 @@
     <footer class="footer">
         <div class="container footer-content">
             <div class="footer-logo">
-                <img src="ambiance.jpg" alt="Ambiance Coffee Logo">
-                <h3>Ambiance Coffee</h3>
-                <p class="footer-tagline">with ANBINONE La Patisserie</p>
+                <img src="ambiance.png" alt="Logo Ambiance la patisserie">
+                <h3>Ambiance la patisserie</h3>
+                <p class="footer-tagline">avec Ambiance La Pâtisserie</p>
             </div>
             <div class="footer-links">
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
+                <h4>Liens Rapides</h4>
+                <a href="index.html">Accueil</a>
                 <a href="menu.html">Menu</a>
                 <a href="contact.html">Contact</a>
             </div>
             <div class="footer-contact">
-                <h4>Visit Us</h4>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Serenity Street, Your City</p>
-                <p><i class="fas fa-clock"></i> Mon-Sun: 7:00 AM - 10:00 PM</p>
+                <h4>Nous Visiter</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Rue de la Sérénité, Votre Ville</p>
+                <p><i class="fas fa-clock"></i> Lun-Dim : 7h00 - 22h00</p>
                 <p><i class="fas fa-phone"></i> (123) 456-7890</p>
             </div>
             <div class="footer-social">
-                <h4>Follow Our Ambiance</h4>
+                <h4>Suivez Notre Ambiance</h4>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; <span id="currentYear"></span> Ambiance Coffee. ANBINONE La patisserie is a trademark. All rights reserved.</p>
+            <p>&copy; <span id="currentYear"></span> Ambiance la patisserie. Ambiance La Pâtisserie est une marque déposée. Tous droits réservés.</p>
         </div>
     </footer>
 
     <script>
-        // Model Viewer Zoom Controls
+        // Contrôles de Zoom du Modèle 3D
         const zoomIn = document.getElementById('zoom-in');
         const zoomOut = document.getElementById('zoom-out');
         const resetView = document.getElementById('reset-view');
@@ -341,7 +341,7 @@
             modelViewer.fieldOfView = '45deg';
         });
 
-        // Set current year in footer
+        // Définir l'année en cours dans le footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
     <script src="script.js"></script>
