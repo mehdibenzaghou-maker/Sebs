@@ -31,3 +31,46 @@ if (contactForm) {
         this.reset();
     });
 }
+// Function to replace all placeholders with images
+function replacePlaceholdersWithImages() {
+    const placeholders = document.querySelectorAll('.item-media-placeholder');
+    
+    placeholders.forEach(placeholder => {
+        const menuItem = placeholder.closest('.menu-item');
+        const itemName = menuItem.querySelector('.item-name').textContent.trim();
+        
+        // Create image filename from item name
+        const filename = itemName.toLowerCase()
+            .replace(/[^a-z0-9\s]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/[éèêë]/g, 'e')
+            .replace(/[àâä]/g, 'a')
+            .replace(/[îï]/g, 'i')
+            .replace(/[ôö]/g, 'o')
+            .replace(/[ûüù]/g, 'u')
+            .replace(/ç/g, 'c') + '.jpg';
+        
+        // Create new image element
+        const img = document.createElement('img');
+        img.src = `images/${filename}`;
+        img.alt = itemName;
+        img.loading = 'lazy';
+        
+        // Replace placeholder with image
+        const mediaContainer = placeholder.parentElement;
+        mediaContainer.innerHTML = '';
+        mediaContainer.appendChild(img);
+        
+        // Optional: Add zoom button
+        const zoomBtn = document.createElement('button');
+        zoomBtn.className = 'zoom-btn';
+        zoomBtn.innerHTML = '<i class="fas fa-search-plus"></i> Zoom';
+        zoomBtn.onclick = function() {
+            openImageModal(this);
+        };
+        mediaContainer.appendChild(zoomBtn);
+    });
+}
+
+// Call this function when page loads
+document.addEventListener('DOMContentLoaded', replacePlaceholdersWithImages);
