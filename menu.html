@@ -29,20 +29,32 @@
             background: var(--gold);
         }
         .menu-category {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
         }
         .category-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 600;
             color: var(--black);
             border-left: 4px solid var(--gold);
             padding-left: 15px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            background: var(--light);
+            padding: 1rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+        }
+        .category-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--medium);
+            font-style: italic;
+            margin: -1rem 0 1.5rem 2rem;
         }
         .menu-items {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
         }
         .menu-item {
@@ -51,6 +63,8 @@
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         .menu-item:hover {
             transform: translateY(-5px);
@@ -66,85 +80,134 @@
             font-size: 1.5rem;
             font-weight: 600;
             color: var(--black);
+            flex: 1;
         }
         .item-price {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--gold);
             font-weight: 700;
+            margin-left: 1rem;
+            white-space: nowrap;
         }
         .item-desc {
             color: var(--dark);
             font-size: 0.95rem;
             line-height: 1.5;
+            margin-top: 0.5rem;
+            font-style: italic;
         }
 
-        /* Section Visionneuse 3D */
-        #model-viewer-section {
-            background: var(--cream);
-            padding: 3rem 0;
-            margin: 3rem 0;
-            border-radius: 10px;
-        }
-        .model-container {
-            position: relative;
-            width: 90%;
-            max-width: 600px;
-            height: 400px;
-            margin: 0 auto;
-            border-radius: 10px;
+        /* Conteneur pour modèle 3D ou image */
+        .item-media {
+            width: 100%;
+            height: 200px;
+            margin: 1rem 0;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            background: #f9f7f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        model-viewer {
+        .item-media model-viewer {
             width: 100%;
             height: 100%;
             --poster-color: transparent;
         }
-        .zoom-buttons {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            gap: 10px;
-            z-index: 10;
+        .item-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        .zoom-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+        .item-media-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--medium);
+            font-size: 0.9rem;
+        }
+        .item-media-placeholder i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Bouton Agrandir pour modèles 3D */
+        .agrandir-btn {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
             background: var(--black);
             color: white;
             border: none;
-            font-size: 1.2rem;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-size: 0.8rem;
             cursor: pointer;
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 5px;
+            z-index: 10;
             transition: all 0.3s ease;
         }
-        .zoom-btn:hover {
+        .agrandir-btn:hover {
             background: var(--gold);
-            color: var(--black);
-        }
-        .model-title {
-            text-align: center;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
             color: var(--black);
         }
 
-        /* Badge Pâtisserie */
-        .patisserie-badge {
+        /* Modal pour agrandir le modèle 3D */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            width: 90%;
+            max-width: 900px;
+            height: 80vh;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .modal model-viewer {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Badge pour items avec image */
+        .picture-badge {
             display: inline-block;
-            background: var(--gold);
-            color: var(--black);
-            font-size: 0.8rem;
-            padding: 3px 10px;
-            border-radius: 20px;
-            margin-left: 10px;
-            font-weight: 600;
+            background: #4a90e2;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        /* Style pour les prix en Dinar Algérien */
+        .currency {
+            font-size: 0.9em;
+            margin-left: 2px;
         }
     </style>
 </head>
@@ -169,126 +232,1230 @@
     <!-- Menu Header -->
     <header class="page-header">
         <div class="container">
-            <h1>Notre Menu</h1>
-            <p>Découvrez nos boissons caféinées artisanales et nos pâtisseries exquises de <span class="gold-accent">Ambiance La Pâtisserie</span>.</p>
+            <h1>Notre Menu Complet</h1>
+            <p>Découvrez nos délicieuses pâtisseries, boissons et plats préparés avec passion.</p>
         </div>
     </header>
 
-    <!-- Section Visionneuse 3D -->
-    <section id="model-viewer-section">
-        <div class="container">
-            <h2 class="model-title">Création Signature en 3D</h2>
-            <p class="section-subtitle" style="text-align:center; margin-bottom:2rem;">Explorez notre pâtisserie signature en détail. Utilisez les boutons pour zoomer.</p>
-            <div class="model-container">
-                <!-- Remplacez par votre véritable modèle .glb/.gltf -->
-                <model-viewer
-                    src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-                    alt="Un modèle 3D d'une pâtisserie signature"
-                    camera-controls
-                    auto-rotate
-                    ar
-                    shadow-intensity="1">
-                </model-viewer>
-                <div class="zoom-buttons">
-                    <button class="zoom-btn" id="zoom-in">
-                        <i class="fas fa-search-plus"></i>
-                    </button>
-                    <button class="zoom-btn" id="zoom-out">
-                        <i class="fas fa-search-minus"></i>
-                    </button>
-                    <button class="zoom-btn" id="reset-view">
-                        <i class="fas fa-sync-alt"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Sections Menu -->
     <main class="container menu-section">
-        <!-- Section Café -->
+        <!-- Section Gâteaux -->
         <div class="menu-category">
-            <h2 class="category-title">Café & Expresso</h2>
+            <h2 class="category-title">Gâteaux</h2>
             <div class="menu-items">
-                <!-- Article 1 -->
+                <!-- Millefeuille -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">Expresso</h3>
-                        <span class="item-price">3,50 €</span>
+                        <h3 class="item-name">MILLEFEUILLE</h3>
+                        <span class="item-price">200<span class="currency">Da</span></span>
                     </div>
-                    <p class="item-desc">Un shot riche et concentré de nos meilleurs grains d'origine unique.</p>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un millefeuille"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
                 </div>
-                <!-- Article 2 -->
+
+                <!-- Gâteau -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">Cappuccino</h3>
-                        <span class="item-price">4,75 €</span>
+                        <h3 class="item-name">GÂTEAU</h3>
+                        <span class="item-price">350<span class="currency">Da</span></span>
                     </div>
-                    <p class="item-desc">Expresso parfaitement équilibré avec du lait vapeur et une épaisse couche de micro-mousse.</p>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un gâteau"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
                 </div>
-                <!-- Article 3 -->
+
+                <!-- Viennoiserie -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">Café Filtre</h3>
-                        <span class="item-price">5,00 €</span>
+                        <h3 class="item-name">VIENNOISERIE</h3>
+                        <span class="item-price">-</span>
                     </div>
-                    <p class="item-desc">Infusion d'origine unique mettant en valeur des notes florales et fruitées nuancées.</p>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D de viennoiseries"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- Section Pâtisserie -->
+        <!-- Section Salades -->
         <div class="menu-category">
-            <h2 class="category-title">Ambiance La Pâtisserie</h2>
+            <h2 class="category-title">Salades</h2>
             <div class="menu-items">
-                <!-- Article 1 -->
+                <!-- La César -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">Croissant <span class="patisserie-badge">Signature</span></h3>
-                        <span class="item-price">4,25 €</span>
+                        <h3 class="item-name">LA CÉSAR</h3>
+                        <span class="item-price">400<span class="currency">Da</span></span>
                     </div>
-                    <p class="item-desc">Beurré, feuilleté et cuit frais tous les matins.</p>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'une salade César"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
                 </div>
-                <!-- Article 2 -->
+
+                <!-- Salade de Pâte -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">Assortiment de Macarons</h3>
-                        <span class="item-price">12,00 €</span>
+                        <h3 class="item-name">SALADE DE PÂTE</h3>
+                        <span class="item-price">400<span class="currency">Da</span></span>
                     </div>
-                    <p class="item-desc">Six délicats macarons français aux saveurs de saison.</p>
-                </div>
-                <!-- Article 3 -->
-                <div class="menu-item">
-                    <div class="item-header">
-                        <h3 class="item-name">Éclair au Chocolat</h3>
-                        <span class="item-price">6,50 €</span>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'une salade de pâtes"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
                     </div>
-                    <p class="item-desc">Pâte à choux fourrée à la crème vanille et nappée de chocolat noir.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Thé & Autres -->
+        <!-- Section Œuf au choix -->
         <div class="menu-category">
-            <h2 class="category-title">Thé & Plus</h2>
+            <h2 class="category-title">Œuf au choix</h2>
+            <p class="category-subtitle">De 07:30 à 14:00</p>
             <div class="menu-items">
+                <!-- Au Plat -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">Sélection de Thés Artisanaux</h3>
-                        <span class="item-price">4,00 €</span>
+                        <h3 class="item-name">AU PLAT</h3>
+                        <span class="item-price">250<span class="currency">Da</span></span>
                     </div>
-                    <p class="item-desc">Thés en vrac sélectionnés à travers le monde.</p>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'œufs au plat"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
                 </div>
+
+                <!-- Brouillé -->
                 <div class="menu-item">
                     <div class="item-header">
-                        <h3 class="item-name">Chocolat Chaud</h3>
-                        <span class="item-price">5,25 €</span>
+                        <h3 class="item-name">BROUILLÉ</h3>
+                        <span class="item-price">250<span class="currency">Da</span></span>
                     </div>
-                    <p class="item-desc">Chocolat noir belge riche et velouté avec de la crème fouettée.</p>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'œufs brouillés"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Omelette -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">OMELETTE FROMAGE OU CHAMPIGNONS</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'une omelette"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Œuf Khli3 -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">ŒUF KHLI3</h3>
+                        <span class="item-price">600<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'œuf khli3"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Mini Sandwich -->
+        <div class="menu-category">
+            <h2 class="category-title">Mini Sandwich</h2>
+            <div class="menu-items">
+                <!-- Thon Crudités -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">THON CRUDITÉS</h3>
+                        <span class="item-price">300<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Tomate, laitue, œuf dur, thon, sauce.</p>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un sandwich thon crudités"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Poulet Rôti -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">POULET RÔTI</h3>
+                        <span class="item-price">300<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Tomate, laitue, poulet rôti, fromage.</p>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un sandwich poulet rôti"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 4 Fromages -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">4 FROMAGES</h3>
+                        <span class="item-price">300<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">4 fromages.</p>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un sandwich 4 fromages"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Nordique -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">NORDIQUE</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Tomate, laitue, saumon, fromage.</p>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un sandwich nordique"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mini Burger -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">MINI BURGER</h3>
+                        <span class="item-price">300<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un mini burger"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tacos -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">TACOS</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Poulet mariné, sauce.</p>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un tacos"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Petit Déjeuner -->
+        <div class="menu-category">
+            <h2 class="category-title">Petit Déjeuner</h2>
+            <div class="menu-items">
+                <!-- Classique -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">CLASSIQUE</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Café au lait/ou chocolat chaud, viennoiserie, jus pressé.</p>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un petit déjeuner classique"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gourmand -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">GOURMAND</h3>
+                        <span class="item-price">800<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Café au lait/ou chocolat chaud, viennoiserie, confiture, jus pressé, œuf au choix.</p>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un petit déjeuner gourmand"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Boissons Chaudes -->
+        <div class="menu-category">
+            <h2 class="category-title">Boissons Chaudes</h2>
+            <div class="menu-items">
+                <!-- Expresso -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">ESPRESSO</h3>
+                        <span class="item-price">200<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un expresso"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Café au Lait -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">CAFÉ AU LAIT</h3>
+                        <span class="item-price">150<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un café au lait"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chocolat Chaud -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">CHOCOLAT CHAUD</h3>
+                        <span class="item-price">300<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un chocolat chaud"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cappuccino -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">CAPPUCINO</h3>
+                        <span class="item-price">250<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un cappuccino"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Latte Machiato Caramel -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">LATTE MACHIATO CARAMEL</h3>
+                        <span class="item-price">400<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un latte machiato caramel"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chocolat Viennois -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">CHOCOLAT VIENNOIS</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un chocolat viennois"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Café Bombon -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">CAFÉ BOMBON</h3>
+                        <span class="item-price">300<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un café bombon"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Café Illy / Nespresso -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">CAFÉ ILLY / NESPRESSO</h3>
+                        <span class="item-price">300<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un café Illy/Nespresso"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Café Americano -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">CAFÉ AMÉRICANO</h3>
+                        <span class="item-price">250<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un café americano"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Thé -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">THÉ</h3>
+                        <span class="item-price">200<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <model-viewer
+                            src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                            alt="Modèle 3D d'un thé"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                        </model-viewer>
+                        <button class="agrandir-btn" onclick="openModal(this)">
+                            <i class="fas fa-expand"></i> Agrandir
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Frappuccino -->
+        <div class="menu-category">
+            <h2 class="category-title">Frappuccino <span class="picture-badge">PHOTO</span></h2>
+            <div class="menu-items">
+                <!-- Frappuccino Caramel -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">FRAPPUCCINO CARAMEL</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Frappuccino Caramel</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frappuccino Vanilla -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">FRAPPUCCINO VANILLA</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Frappuccino Vanilla</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Smoothie -->
+        <div class="menu-category">
+            <h2 class="category-title">Smoothie <span class="picture-badge">PHOTO</span></h2>
+            <div class="menu-items">
+                <!-- Fraise Banane -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">FRAISE BANANE</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Smoothie Fraise Banane</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kiwi, Banane -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">KIWI, BANANE</h3>
+                        <span class="item-price">600<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Smoothie Kiwi Banane</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pêche, Fraise, Ananas -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">PÊCHE, FRAISE, ANANAS</h3>
+                        <span class="item-price">600<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Smoothie Pêche Fraise Ananas</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Ice Laté -->
+        <div class="menu-category">
+            <h2 class="category-title">Ice Laté <span class="picture-badge">PHOTO</span></h2>
+            <div class="menu-items">
+                <!-- Ice Caramel Machiato -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">ICE CARAMEL MACHIATO</h3>
+                        <span class="item-price">400<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Lait frais, café, glaçon, mousse de lait, sauce caramel.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image de l'Ice Caramel Machiato</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ice Americano -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">ICE AMERICANO</h3>
+                        <span class="item-price">250<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Café, glaçon.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image de l'Ice Americano</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Jus -->
+        <div class="menu-category">
+            <h2 class="category-title">Jus <span class="picture-badge">PHOTO</span></h2>
+            <div class="menu-items">
+                <!-- Jus d'Orange -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">JUS D'ORANGE</h3>
+                        <span class="item-price">400<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Jus d'Orange</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cocktail de Fruit -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">COCKTAIL DE FRUIT</h3>
+                        <span class="item-price">400<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Cocktail de Fruit</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Milkshake -->
+        <div class="menu-category">
+            <h2 class="category-title">Milkshake <span class="picture-badge">PHOTO</span></h2>
+            <div class="menu-items">
+                <!-- Milkshake Chocolat -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">MILKSHAKE CHOCOLAT</h3>
+                        <span class="item-price">400<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Milkshake Chocolat</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milkshake Chocolat Banane -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">MILKSHAKE CHOCOLAT BANANE</h3>
+                        <span class="item-price">600<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Milkshake Chocolat Banane</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milkshake Vanille -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">MILKSHAKE VANILLE</h3>
+                        <span class="item-price">400<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Milkshake Vanille</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milkshake Vanille Banane -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">MILKSHAKE VANILLE BANANE</h3>
+                        <span class="item-price">600<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Milkshake Vanille Banane</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milkshake Snikers -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">MILKSHAKE SNIKERS</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Milkshake Snikers</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Milkshake Bueno -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">MILKSHAKE BUENO</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Milkshake Bueno</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Cocktail -->
+        <div class="menu-category">
+            <h2 class="category-title">Cocktail <span class="picture-badge">PHOTO</span></h2>
+            <div class="menu-items">
+                <!-- Rainbow -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">RAINBOW</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Orange, ananas, fruits de passion, citron, sirop grenadine.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Cocktail Rainbow</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Virgin Colada -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">VIRGIN COLADA</h3>
+                        <span class="item-price">600<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Ananas, orange, pina colada, citron.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Virgin Colada</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Minty Coast -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">MINTY COAST</h3>
+                        <span class="item-price">400<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Ananas, menthe.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Minty Coast</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banaminty -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">BANAMINTY</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Banane, menthe.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Banaminty</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blue Lagoon -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">BLUE LAGOON</h3>
+                        <span class="item-price">700<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Sirop rhum, sirop bleu curaçao, citron, ananas.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Blue Lagoon</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lymbo Sour -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">LYMBO SOUR</h3>
+                        <span class="item-price">600<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Ananas, lait de coco, sirop grenadine, citron.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Lymbo Sour</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mojito -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">MOJITO</h3>
+                        <span class="item-price">400<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Mojito</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blue Mojito -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">BLUE MOJITO</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Blue Mojito</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Black Mojito -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">BLACK MOJITO</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Black Mojito</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coconut Mojito -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">COCONUT MOJITO</h3>
+                        <span class="item-price">600<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Coconut Mojito</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Menu Glace -->
+        <div class="menu-category">
+            <h2 class="category-title">Menu Glace <span class="picture-badge">PHOTO</span></h2>
+            <div class="menu-items">
+                <!-- Split Banana -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">SPLIT BANANA</h3>
+                        <span class="item-price">900<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Vanille, fraise, chocolat, sauce chantilly.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Split Banana</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pêche Melba -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">PÊCHE MELBA</h3>
+                        <span class="item-price">600<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">2 Vanille, pêche, sauce chantilly.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image de la Pêche Melba</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- La Belle Hélène -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">LA BELLE HÉLÈNE</h3>
+                        <span class="item-price">600<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Vanille, chocolat, poire, sauce chantilly.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image de La Belle Hélène</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nougat Glacé Dubai -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">NOUGAT GLACÉ DUBAI</h3>
+                        <span class="item-price">800<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Nougat, sauce, pistache.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Nougat Glacé Dubai</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- French Toast Gourmand -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">FRENCH TOAST GOURMAND</h3>
+                        <span class="item-price">800<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Toast sauce fruits glace.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du French Toast Gourmand</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chocolat Brownie -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">CHOCOLAT BROWNIE</h3>
+                        <span class="item-price">700<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Vanille, brownie, sauce chantilly.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Chocolat Brownie</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kids Ice -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">KIDS ICE</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">2 boules au choix.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Kids Ice</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coco Mango -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">COCO MANGO</h3>
+                        <span class="item-price">900<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Glace bounti, mangue sauce.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Coco Mango</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fondant au Chocolat -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">FONDANT AU CHOCOLAT</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Plus boule de glace au choix.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Fondant au Chocolat</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Granita -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">GRANITA</h3>
+                        <span class="item-price">300<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Granita</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panaché -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">PANACHÉ</h3>
+                        <span class="item-price">400<span class="currency">Da</span></span>
+                    </div>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Panaché</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonel -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">COLONEL</h3>
+                        <span class="item-price">500<span class="currency">Da</span></span>
+                    </div>
+                    <p class="item-desc">Soda, sorbet citron.</p>
+                    <div class="item-media">
+                        <div class="item-media-placeholder">
+                            <i class="fas fa-image"></i>
+                            <span>Image du Colonel</span>
+                            <small>À remplacer par votre photo</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Modal pour agrandir les modèles 3D -->
+    <div class="modal" id="modelModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <model-viewer
+                id="modal-viewer"
+                src=""
+                alt="Modèle 3D agrandi"
+                camera-controls
+                auto-rotate
+                shadow-intensity="1"
+                style="width:100%; height:100%;">
+            </model-viewer>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -323,22 +1490,36 @@
     </footer>
 
     <script>
-        // Contrôles de Zoom du Modèle 3D
-        const zoomIn = document.getElementById('zoom-in');
-        const zoomOut = document.getElementById('zoom-out');
-        const resetView = document.getElementById('reset-view');
-        const modelViewer = document.querySelector('model-viewer');
+        // Fonctions pour le modal d'agrandissement
+        function openModal(button) {
+            const menuItem = button.closest('.menu-item');
+            const modelViewer = menuItem.querySelector('model-viewer');
+            const modal = document.getElementById('modelModal');
+            const modalViewer = document.getElementById('modal-viewer');
+            
+            if (modelViewer && modalViewer) {
+                modalViewer.src = modelViewer.src;
+                modalViewer.alt = modelViewer.alt;
+                modal.style.display = 'flex';
+            }
+        }
 
-        zoomIn.addEventListener('click', () => {
-            modelViewer.cameraOrbitRadius -= 0.5;
+        function closeModal() {
+            document.getElementById('modelModal').style.display = 'none';
+        }
+
+        // Fermer le modal en cliquant à l'extérieur
+        document.getElementById('modelModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
         });
-        zoomOut.addEventListener('click', () => {
-            modelViewer.cameraOrbitRadius += 0.5;
-        });
-        resetView.addEventListener('click', () => {
-            modelViewer.cameraOrbit = '0deg 75deg 105%';
-            modelViewer.cameraTarget = '0m 0m 0m';
-            modelViewer.fieldOfView = '45deg';
+
+        // Fermer le modal avec la touche Échap
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
         });
 
         // Définir l'année en cours dans le footer
