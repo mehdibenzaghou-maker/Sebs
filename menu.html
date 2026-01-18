@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambiance Coffee | Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    <style>
+        .menu-section {
+            margin-bottom: 4rem;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: var(--gold);
+        }
+        .menu-category {
+            margin-bottom: 3rem;
+        }
+        .category-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--black);
+            border-left: 4px solid var(--gold);
+            padding-left: 15px;
+            margin-bottom: 1.5rem;
+        }
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .menu-item {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .item-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--black);
+        }
+        .item-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+        .item-desc {
+            color: var(--dark);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* 3D Viewer Section */
+        #model-viewer-section {
+            background: var(--cream);
+            padding: 3rem 0;
+            margin: 3rem 0;
+            border-radius: 10px;
+        }
+        .model-container {
+            position: relative;
+            width: 90%;
+            max-width: 600px;
+            height: 400px;
+            margin: 0 auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            --poster-color: transparent;
+        }
+        .zoom-buttons {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        .zoom-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--black);
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .zoom-btn:hover {
+            background: var(--gold);
+            color: var(--black);
+        }
+        .model-title {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+
+        /* Patisserie Badge */
+        .patisserie-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--black);
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="ambiance.jpg" alt="Ambiance Coffee Logo" id="logo-image">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu & Patisserie</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Our Menu</h1>
+            <p>Discover our handcrafted coffee beverages and exquisite pastries from <span class="gold-accent">ANBINONE La Patisserie</span>.</p>
+        </div>
+    </header>
+
+    <!-- 3D Model Viewer Section -->
+    <section id="model-viewer-section">
+        <div class="container">
+            <h2 class="model-title">Featured Creation in 3D</h2>
+            <p class="section-subtitle" style="text-align:center; margin-bottom:2rem;">Explore our signature pastry in detail. Use the buttons to zoom.</p>
+            <div class="model-container">
+                <!-- Replace with your actual .glb/.gltf model URL -->
+                <model-viewer
+                    src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+                    alt="A 3D model of a featured pastry"
+                    camera-controls
+                    auto-rotate
+                    ar
+                    shadow-intensity="1">
+                </model-viewer>
+                <div class="zoom-buttons">
+                    <button class="zoom-btn" id="zoom-in">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button class="zoom-btn" id="zoom-out">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <button class="zoom-btn" id="reset-view">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Sections -->
+    <main class="container menu-section">
+        <!-- Coffee Section -->
+        <div class="menu-category">
+            <h2 class="category-title">Coffee & Espresso</h2>
+            <div class="menu-items">
+                <!-- Item 1 -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">Espresso</h3>
+                        <span class="item-price">$3.50</span>
+                    </div>
+                    <p class="item-desc">A rich, concentrated shot of our finest single-origin beans.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">Cappuccino</h3>
+                        <span class="item-price">$4.75</span>
+                    </div>
+                    <p class="item-desc">Perfectly balanced espresso with steamed milk and a thick layer of microfoam.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">Pour Over</h3>
+                        <span class="item-price">$5.00</span>
+                    </div>
+                    <p class="item-desc">Single-origin brew highlighting nuanced floral and fruity notes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Patisserie Section -->
+        <div class="menu-category">
+            <h2 class="category-title">ANBINONE La Patisserie</h2>
+            <div class="menu-items">
+                <!-- Item 1 -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">Croissant <span class="patisserie-badge">Signature</span></h3>
+                        <span class="item-price">$4.25</span>
+                    </div>
+                    <p class="item-desc">Buttery, flaky, and baked fresh every morning.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">Macaron Assortment</h3>
+                        <span class="item-price">$12.00</span>
+                    </div>
+                    <p class="item-desc">Six delicate French macarons in seasonal flavors.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">Chocolate Éclair</h3>
+                        <span class="item-price">$6.50</span>
+                    </div>
+                    <p class="item-desc">Choux pastry filled with vanilla cream and topped with dark chocolate.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tea & Other -->
+        <div class="menu-category">
+            <h2 class="category-title">Tea & More</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">Artisan Tea Selection</h3>
+                        <span class="item-price">$4.00</span>
+                    </div>
+                    <p class="item-desc">Curated loose-leaf teas from around the world.</p>
+                </div>
+                <div class="menu-item">
+                    <div class="item-header">
+                        <h3 class="item-name">Hot Chocolate</h3>
+                        <span class="item-price">$5.25</span>
+                    </div>
+                    <p class="item-desc">Rich, velvety Belgian dark chocolate with whipped cream.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="ambiance.jpg" alt="Ambiance Coffee Logo">
+                <h3>Ambiance Coffee</h3>
+                <p class="footer-tagline">with ANBINONE La Patisserie</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-contact">
+                <h4>Visit Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Serenity Street, Your City</p>
+                <p><i class="fas fa-clock"></i> Mon-Sun: 7:00 AM - 10:00 PM</p>
+                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Our Ambiance</h4>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Ambiance Coffee. ANBINONE La patisserie is a trademark. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Model Viewer Zoom Controls
+        const zoomIn = document.getElementById('zoom-in');
+        const zoomOut = document.getElementById('zoom-out');
+        const resetView = document.getElementById('reset-view');
+        const modelViewer = document.querySelector('model-viewer');
+
+        zoomIn.addEventListener('click', () => {
+            modelViewer.cameraOrbitRadius -= 0.5;
+        });
+        zoomOut.addEventListener('click', () => {
+            modelViewer.cameraOrbitRadius += 0.5;
+        });
+        resetView.addEventListener('click', () => {
+            modelViewer.cameraOrbit = '0deg 75deg 105%';
+            modelViewer.cameraTarget = '0m 0m 0m';
+            modelViewer.fieldOfView = '45deg';
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
