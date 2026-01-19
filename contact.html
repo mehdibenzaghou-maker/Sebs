@@ -7,6 +7,338 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-page {
+            padding: 3rem 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .contact-info h2, .contact-form-container h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-icon {
+            color: var(--gold);
+            font-size: 1.8rem;
+        }
+        
+        .contact-text {
+            color: var(--dark);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .info-card {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .info-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--black);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .info-card h3 i {
+            color: var(--gold);
+        }
+        
+        .info-card p {
+            color: var(--dark);
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .social-contact {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .social-contact h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+        
+        .social-icons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.8rem 1rem;
+            background: white;
+            border-radius: 6px;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .social-link:hover {
+            background: var(--gold);
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .social-link i {
+            font-size: 1.2rem;
+            width: 24px;
+        }
+        
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+        
+        .social-link.facebook:hover {
+            background: #1877F2;
+        }
+        
+        /* Contact Form Styles */
+        .contact-form-container {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid rgba(0,0,0,0.15);
+            border-radius: 6px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(184, 148, 94, 0.1);
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        
+        .checkbox-label input {
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--black);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-submit:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+        }
+        
+        /* Map Section */
+        .map-container {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .map-container h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--black);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .map-container h2 i {
+            color: var(--gold);
+        }
+        
+        .map-frame {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn-map {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0.8rem 1.5rem;
+            background: var(--black);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-map:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+        }
+        
+        /* Contact Hours Highlight */
+        .hours-highlight {
+            background: linear-gradient(135deg, #f9f7f2 0%, #f0ede6 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            border: 2px solid var(--gold);
+        }
+        
+        .hours-highlight h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: var(--black);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .hours-highlight h4 i {
+            color: var(--gold);
+        }
+        
+        .hours-highlight p {
+            color: var(--dark);
+            margin: 0.5rem 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .hours-highlight .day {
+            font-weight: 600;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .contact-info, .contact-form-container {
+                padding: 1.5rem;
+            }
+            
+            .map-frame {
+                height: 350px;
+            }
+            
+            .social-icons {
+                flex-direction: column;
+            }
+            
+            .hours-highlight p {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-grid {
+                gap: 2rem;
+            }
+            
+            .contact-info h2, .contact-form-container h2, .map-container h2 {
+                font-size: 1.8rem;
+            }
+            
+            .map-frame {
+                height: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -40,17 +372,26 @@
             <!-- Infos Contact -->
             <div class="contact-info">
                 <h2><i class="fas fa-store contact-icon"></i> Visitez Notre Café</h2>
-                <p class="contact-text">Vivez la chaleur et les arômes d'Ambiance la patisserie en personne.</p>
+                <p class="contact-text">Vivez la chaleur et les arômes d'Ambiance la patisserie en personne. Découvrez nos délicieuses pâtisseries dans une atmosphère chaleureuse et accueillante.</p>
                 
                 <div class="info-card">
                     <h3><i class="fas fa-map-marker-alt"></i> Adresse</h3>
-                    <p>123 Rue de la Sérénité<br>Votre Ville, Code Postal 12345</p>
+                    <p>Ambiance la patisserie<br>Tlemcen, Algérie<br>Localisation: VMPF+G43, Tlemcen</p>
                 </div>
+                
                 <div class="info-card">
-                    <h3><i class="fas fa-clock"></i> Horaires</h3>
-                    <p><strong>Lundi – Vendredi :</strong> 7h00 – 22h00<br>
-                       <strong>Samedi – Dimanche :</strong> 8h00 – 23h00</p>
+                    <h3><i class="fas fa-clock"></i> Horaires d'Ouverture</h3>
+                    <p>Nous sommes ouverts 7 jours sur 7 pour satisfaire vos envies de douceurs.</p>
                 </div>
+                
+                <div class="hours-highlight">
+                    <h4><i class="fas fa-business-time"></i> Nos Horaires</h4>
+                    <p><span class="day">Lundi – Jeudi :</span> <span>7h00 – 22h00</span></p>
+                    <p><span class="day">Vendredi :</span> <span>7h00 – 23h00</span></p>
+                    <p><span class="day">Samedi :</span> <span>8h00 – 23h00</span></p>
+                    <p><span class="day">Dimanche :</span> <span>8h00 – 22h00</span></p>
+                </div>
+                
                 <div class="info-card">
                     <h3><i class="fas fa-phone"></i> Téléphone & Email</h3>
                     <p><strong>Téléphone :</strong> (123) 456-7890<br>
@@ -58,34 +399,42 @@
                 </div>
 
                 <div class="social-contact">
-                    <h3>Suivez-Nous</h3>
+                    <h3>Suivez-Nous sur les Réseaux</h3>
+                    <p>Découvrez nos dernières créations et promotions.</p>
                     <div class="social-icons">
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i> Instagram</a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i> Facebook</a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i> Twitter</a>
+                        <a href="https://www.instagram.com/ambiancelapatisserie?igsh=MXZxMm00ZzU2aml2MA==" target="_blank" class="social-link instagram">
+                            <i class="fab fa-instagram"></i> 
+                            <span>Instagram: @ambiancelapatisserie</span>
+                        </a>
+                        <a href="https://www.facebook.com/share/1aNBiLqk5t/?mibextid=wwXIfr" target="_blank" class="social-link facebook">
+                            <i class="fab fa-facebook"></i> 
+                            <span>Facebook: Ambiance la patisserie</span>
+                        </a>
                     </div>
                 </div>
             </div>
 
             <!-- Formulaire Contact -->
             <div class="contact-form-container">
-                <h2><i class="fas fa-envelope contact-icon"></i> Envoyer un Message</h2>
+                <h2><i class="fas fa-envelope contact-icon"></i> Envoyez-nous un Message</h2>
+                <p class="contact-text">Vous avez une question, une suggestion ou souhaitez réserver une table ? Remplissez ce formulaire et nous vous répondrons rapidement.</p>
+                
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name">Nom Complet *</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" required placeholder="Votre nom et prénom">
                     </div>
                     <div class="form-group">
                         <label for="email">Adresse Email *</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com">
                     </div>
                     <div class="form-group">
                         <label for="subject">Sujet</label>
-                        <input type="text" id="subject" name="subject">
+                        <input type="text" id="subject" name="subject" placeholder="Réservation, question, suggestion...">
                     </div>
                     <div class="form-group">
                         <label for="message">Message *</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <textarea id="message" name="message" rows="6" required placeholder="Votre message..."></textarea>
                     </div>
                     <div class="form-group">
                         <label class="checkbox-label">
@@ -93,23 +442,39 @@
                             <span>J'accepte la politique de confidentialité et souhaite être contacté par Ambiance la patisserie.</span>
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-submit">Envoyer le Message <i class="fas fa-paper-plane"></i></button>
+                    <button type="submit" class="btn btn-submit">
+                        <i class="fas fa-paper-plane"></i> Envoyer le Message
+                    </button>
                 </form>
             </div>
         </div>
 
         <!-- Carte -->
         <div class="map-container">
-            <h2><i class="fas fa-map-marked-alt"></i> Trouvez-Nous</h2>
-            <div class="map-placeholder">
-                <!-- Remplacez par un embed Google Maps réel -->
-                <div class="map-frame">
-                    <img src="https://via.placeholder.com/800x400/EEE/CCC?text=Intégration+Google+Maps+Ici" alt="Placeholder de carte">
-                    <div class="map-overlay">
-                        <p>Une carte interactive sera intégrée ici.</p>
-                        <a href="#" class="btn btn-map">Ouvrir dans Google Maps</a>
-                    </div>
-                </div>
+            <h2><i class="fas fa-map-marked-alt"></i> Notre Localisation</h2>
+            <p class="contact-text">Trouvez-nous facilement grâce à cette carte interactive. Cliquez sur le bouton ci-dessous pour obtenir l'itinéraire.</p>
+            
+            <div class="map-frame">
+                <!-- Google Maps Embed -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3257.595966526205!2d-1.3152329234706808!3d35.26786597266892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd7fe0d61519c88b%3A0xedc332bf58ad8f47!2sAmbiance%20la%20p%C3%A2tisserie!5e0!3m2!1sfr!2sdz!4v1705600000000!5m2!1sfr!2sdz" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            
+            <div class="map-actions">
+                <a href="https://www.google.com/maps/dir//VMPF%2BG43+Tlemcen,+Alg%C3%A9rie/@35.267866,-1.312658,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0xd7fe0d61519c88b:0xedc332bf58ad8f47!2m2!1d-1.312658!2d35.267866!3e0?entry=ttu" 
+                   target="_blank" 
+                   class="btn-map">
+                    <i class="fas fa-directions"></i> Obtenir l'itinéraire
+                </a>
+                <a href="https://maps.app.goo.gl/VMPF+G43,Tlemcen" 
+                   target="_blank" 
+                   class="btn-map">
+                    <i class="fas fa-map-marker-alt"></i> Ouvrir dans Google Maps
+                </a>
             </div>
         </div>
     </main>
@@ -130,15 +495,14 @@
             </div>
             <div class="footer-contact">
                 <h4>Nous Visiter</h4>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Rue de la Sérénité, Votre Ville</p>
+                <p><i class="fas fa-map-marker-alt"></i> VMPF+G43, Tlemcen, Algérie</p>
                 <p><i class="fas fa-clock"></i> Lun-Dim : 7h00 - 22h00</p>
                 <p><i class="fas fa-phone"></i> (123) 456-7890</p>
             </div>
             <div class="footer-social">
                 <h4>Suivez Notre Ambiance</h4>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/ambiancelapatisserie?igsh=MXZxMm00ZzU2aml2MA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/1aNBiLqk5t/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -150,12 +514,40 @@
         // Feedback de soumission du formulaire
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Merci ! Votre message a été envoyé. Nous y répondrons dans les 24 heures.');
-            this.reset();
+            
+            // Animation de soumission
+            const submitBtn = this.querySelector('.btn-submit');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+            submitBtn.disabled = true;
+            
+            // Simulation d'envoi
+            setTimeout(() => {
+                alert('Merci ! Votre message a été envoyé. Nous vous répondrons dans les 24 heures.');
+                this.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
         });
 
         // Définir l'année en cours dans le footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Animation pour les cartes d'information
+        document.addEventListener('DOMContentLoaded', function() {
+            const infoCards = document.querySelectorAll('.info-card');
+            infoCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
     </script>
     <script src="script.js"></script>
 </body>
